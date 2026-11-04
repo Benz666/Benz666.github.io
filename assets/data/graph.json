@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /assets/data/graph.json
+---
+{%- comment -%} Generated from _data/graph/nodes.json and edges.json. Edit those, not this file. {%- endcomment -%}
+{"baseurl": {{ site.baseurl | jsonify }}, "nodes": {{ site.data.graph.nodes.nodes | jsonify }}, "edges": {{ site.data.graph.edges.edges | jsonify }}}

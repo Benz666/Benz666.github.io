@@ -1,0 +1,16 @@
+<section class="docs-section" id="education" aria-labelledby="education-h">
+  <h2 id="education-h">Education</h2>
+  {%- for e in site.data.education %}
+  <article class="entry">
+    <div class="entry-head">
+      <h3 class="entry-title">{{ e.institution }}</h3>
+      <span class="entry-date">{{ e.dates }}</span>
+    </div>
+    <p class="entry-sub">{{ e.degree }}{% if e.gpa %} <span class="muted">· {{ e.gpa }}</span>{% endif %}</p>
+    <p class="entry-meta">{{ e.field }} · {{ e.location }}</p>
+    {%- if e.details.size > 0 %}
+    <ul class="entry-details">{% for d in e.details %}<li>{{ d }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</section>

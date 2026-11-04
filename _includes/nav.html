@@ -1,0 +1,17 @@
+{%- comment -%} Main navigation. On sub-pages the links point back to the home page sections. {%- endcomment -%}
+{%- assign home = '/' | relative_url -%}
+{%- if page.url == "/" -%}{%- assign home = "" -%}{%- endif -%}
+<nav class="navbar" aria-label="Sections">
+  <ul class="navbar-list">
+    <li><a href="{{ home }}#bio">Bio</a></li>
+    <li><a href="{{ home }}#education">Education</a></li>
+    <li><a href="{{ home }}#research">Research</a></li>
+    <li><a href="{{ home }}#publications">Publications</a></li>
+    <li><a href="{{ home }}#teaching">Teaching</a></li>
+    <li><a href="{{ home }}#graph">Skills Graph</a></li>
+    <li><a href="{{ home }}#news">News</a></li>
+    <li><a href="{{ home }}#talks">Talks</a></li>
+    <li><a href="{{ home }}#cv">CV</a></li>
+    <li><a href="{{ home }}#contact">Contact</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,42 @@
+# News, newest first. One short sentence per item.
+# date: "YYYY-MM-DD", "YYYY-MM" or "YYYY" (shown as written; used for sorting and the year tabs)
+# tag:  talk | poster | award | career | publication
+# link: optional; "#talks", "#pub-<key>", "/projects/<id>/" or an external URL
+- date: "2026-09"
+  tag: poster
+  text: Presented a poster on machine-learning-assisted multiscale phonon transport in AlGaN/GaN HEMTs at **SciML@ND 2026**, University of Notre Dame.
+  link: "#talks"
+- date: "2026-05"
+  tag: talk
+  text: Presented concurrent-learning Deep Potential models for thermal transport in InGaAs alloys at the **42nd International Conference on Thermoelectrics (ICT 2026)**, Houston, TX.
+  link: "#talks"
+- date: "2025-07"
+  tag: talk
+  text: Presented multiscale thermal transport modeling of GaN transistors at the **ASME 2025 Summer Heat Transfer Conference (SHTC 2025)**, Westminster, CO.
+  link: "#talks"
+- date: "2024-08"
+  tag: career
+  text: Started my Ph.D. in Mechanical Engineering at the **University of Notre Dame**, advised by Prof. Tengfei Luo.
+- date: "2023-10"
+  tag: talk
+  text: Oral talk on spectrally modulated TPU films for radiative cooling at the **Annual Conference on Multiphase Flow of the Chinese Society of Engineering Thermophysics**, Shanghai.
+  link: "#talks"
+- date: "2022"
+  tag: award
+  text: Received the **National Scholarship** (graduate students, top 1%).
+- date: "2022"
+  tag: award
+  text: Named **Outstanding Volunteer** at the 11th National Paralympic Games and 8th Special Olympics (Xi'an).
+- date: "2021-12"
+  tag: talk
+  text: Oral talk on spectral regulation of Pt@TiO₂ photothermal nanofluids for concentrated photovoltaics at the **Annual Conference on Multiphase Flow of the Chinese Society of Engineering Thermophysics**, Suzhou.
+  link: "#talks"
+- date: "2021"
+  tag: award
+  text: Bachelor's thesis ranked **No. 1 in the National 100 Excellent Graduation Theses (Design) Competition in Energy and Power**.
+- date: "2020"
+  tag: award
+  text: "**Meritorious Winner**, Mathematical Contest in Modeling (MCM)."
+- date: "2019"
+  tag: award
+  text: "**First Prize (Shaanxi Province)**, China Undergraduate Mathematical Contest in Modeling (CUMCM); also received in 2018."

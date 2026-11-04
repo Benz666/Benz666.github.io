@@ -1,0 +1,145 @@
+# Journal publications. Verified against ORCID, Crossref and Google Scholar (Nov. 2026).
+# The BibTeX entry and the downloadable /publications.bib are generated from these fields.
+#
+# Fields
+#   key       unique id, also the BibTeX key and the page anchor (#pub-<key>)
+#   status    published | accepted | submitted | preprint
+#   authors   list, exactly as published; the site bolds names in `self_names`
+#   equal     optional list of authors with equal contribution (marked with a dagger)
+#   project   optional id of a file in _projects/ (without .md)
+#   pdf, preprint  optional links; leave empty unless the file may be shared publicly
+self_names: ["Ben-Chi Ma", "Benchi Ma"]
+
+papers:
+  - key: zhou2025pinn
+    status: published
+    title: Physics-informed neural networks with hard-encoded angle-dependent boundary conditions for phonon Boltzmann transport equation
+    authors: [Jiahang Zhou, Ruiyang Li, Wenjie Shang, Yi Liu, J.P. Panda, Pan Du, Xin-Yang Liu, Jasmine Liang, Ben-Chi Ma, Jian-Xun Wang, Tengfei Luo]
+    journal: Materials Today Physics
+    volume: "59"
+    number: "101922"
+    year: 2025
+    doi: 10.1016/j.mtphys.2025.101922
+    project: gan-device-thermal
+
+  - key: xin2025bilayer
+    status: published
+    title: Efficient passive cooling over a novel bifunctional polymer bilayer composite simultaneously possessing radiative and evaporative cooling properties
+    authors: [Qingxi Xin, Benchi Ma, Jiaying Ru, Yu Zhou, Dengwei Jing]
+    journal: Advanced Energy Materials
+    volume: "15"
+    issue: "14"
+    number: "2404122"
+    year: 2025
+    doi: 10.1002/aenm.202404122
+    project: radiative-cooling
+
+  - key: li2024pvt
+    status: published
+    title: A novel photovoltaic-thermal system based on spectral splitting of nanoparticle suspensions for simultaneous hydrogen production and seawater desalination
+    authors: [Jiwei Li, Benchi Ma, Hongxia Wang, Yizhou Zhu, Yujie Gu, Dengwei Jing]
+    journal: Energy Conversion and Management
+    volume: "314"
+    number: "118670"
+    year: 2024
+    doi: 10.1016/j.enconman.2024.118670
+    project: cpvt-hydrogen
+
+  - key: ma2024cooling
+    status: published
+    title: Record passive radiative cooling of over 15 °C by a micro-nanoporous granular composite film
+    authors: [Ben-Chi Ma, Maochang Liu, Yizhou Zhu, Kefan Chen, Lixia Pan, Chaoqian Ai, Dengwei Jing]
+    journal: ACS Applied Energy Materials
+    volume: "7"
+    issue: "12"
+    pages: 5064–5070
+    year: 2024
+    doi: 10.1021/acsaem.4c00675
+    project: radiative-cooling
+
+  - key: lu2024bubbles
+    status: published
+    title: Rapid detachment of hydrogen bubbles for electrolytic water splitting driven by combined effects of Marangoni force and the electrostatic repulsion
+    authors: [Xinlong Lu, Devendra Yadav, Benchi Ma, Lijing Ma, Dengwei Jing]
+    journal: Journal of Power Sources
+    volume: "599"
+    number: "234217"
+    year: 2024
+    doi: 10.1016/j.jpowsour.2024.234217
+
+  - key: yadav2024microreactor
+    status: published
+    title: "Advancements in microreactor technology for hydrogen production via steam reforming: A comprehensive review of numerical studies"
+    authors: [Devendra Yadav, Xinlong Lu, Ben-Chi Ma, Dengwei Jing]
+    journal: Journal of Power Sources
+    volume: "596"
+    number: "234090"
+    year: 2024
+    doi: 10.1016/j.jpowsour.2024.234090
+
+  - key: zhu2023lens
+    status: published
+    title: Liquid spherical lens as an effective auxiliary optical unit for CPV/T system with remarkable hydrogen production efficiency
+    authors: [Yizhou Zhu, Benchi Ma, Baichuan He, Xinyu Ma, Dengwei Jing]
+    journal: Applied Energy
+    volume: "334"
+    number: "120733"
+    year: 2023
+    doi: 10.1016/j.apenergy.2023.120733
+    project: cpvt-hydrogen
+
+  - key: ma2022cpvth
+    status: published
+    title: A new Concentrated Photovoltaic Thermal-Hydrogen system with photocatalyst suspension as optical liquid filter
+    authors: [Ben-Chi Ma, Hua Lin, Yizhou Zhu, Zilong Zeng, Jiafeng Geng, Dengwei Jing]
+    journal: Renewable Energy
+    volume: "194"
+    pages: 1221–1232
+    year: 2022
+    doi: 10.1016/j.renene.2022.06.013
+    project: cpvt-hydrogen
+
+  - key: zhu2022collector
+    status: published
+    title: Solar collector tube as secondary concentrator for significantly enhanced optical performance of LCPV/T system
+    authors: [Yizhou Zhu, Benchi Ma, Zilong Zeng, Hewei Lou, Yi He, Dengwei Jing]
+    journal: Renewable Energy
+    volume: "193"
+    pages: 418–433
+    year: 2022
+    doi: 10.1016/j.renene.2022.04.165
+    project: cpvt-hydrogen
+
+  - key: chen2021harvesting
+    status: published
+    title: Recent progress of energy harvesting and conversion coupled with atmospheric water gathering
+    authors: [Zhihui Chen, Jinwen Shi, Yueqi Li, Benchi Ma, Xueli Yan, Maochang Liu, Hui Jin, Dong Li, Dengwei Jing, Liejin Guo]
+    journal: Energy Conversion and Management
+    volume: "246"
+    number: "114668"
+    year: 2021
+    doi: 10.1016/j.enconman.2021.114668
+    project: water-harvesting
+
+  - key: chen2021sorption
+    status: published
+    title: Recent progress on sorption/desorption-based atmospheric water harvesting powered by solar energy
+    authors: [Zhihui Chen, Shiyu Song, Benchi Ma, Yueqi Li, Yu Shao, Jinwen Shi, Maochang Liu, Hui Jin, Dengwei Jing]
+    equal: [Zhihui Chen, Shiyu Song, Benchi Ma]
+    journal: Solar Energy Materials and Solar Cells
+    volume: "230"
+    number: "111233"
+    year: 2021
+    doi: 10.1016/j.solmat.2021.111233
+    project: water-harvesting
+
+  - key: zeng2021reactor
+    status: published
+    title: Should the tubular photocatalytic reactors work continuously or in an intermittent manner instead?
+    authors: [Zilong Zeng, Lijun Sun, Heng Liu, Benchi Ma, Dengwei Jing, Liejin Guo]
+    journal: Industrial & Engineering Chemistry Research
+    volume: "60"
+    issue: "12"
+    pages: 4610–4621
+    year: 2021
+    doi: 10.1021/acs.iecr.1c00463

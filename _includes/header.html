@@ -1,0 +1,20 @@
+{%- assign p = site.data.profile -%}
+<header class="header">
+  <a class="header-photo" href="{{ '/' | relative_url }}">
+    <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="240" height="240">
+  </a>
+  <div class="header-text">
+    <h1>{{ p.name }}</h1>
+    <p class="header-position">{{ p.position }}</p>
+    <p>{{ p.department }}<br>{{ p.affiliation }}, {{ p.location }}</p>
+    <p class="header-contact">
+      <a href="mailto:{{ p.email }}">{% include icon.html name="email" %}<span>{{ p.email }}</span></a>
+      <a href="{{ p.cv_pdf | relative_url }}">{% include icon.html name="download" %}<span>CV (PDF)</span></a>
+    </p>
+    <ul class="header-social" aria-label="Profiles">
+      {%- for l in p.links %}{% if l.url != "" %}
+      <li><a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ l.name }}" title="{{ l.name }}">{% include icon.html name=l.icon %}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</header>

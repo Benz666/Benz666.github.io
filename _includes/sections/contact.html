@@ -1,0 +1,11 @@
+{%- assign p = site.data.profile -%}
+<section class="docs-section" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <ul class="contact-list">
+    <li>{% include icon.html name="email" %}<span class="contact-label">Email</span><a href="mailto:{{ p.email }}">{{ p.email }}</a></li>
+    <li>{% include icon.html name="location" %}<span class="contact-label">Office</span><span>{{ p.department }}, {{ p.affiliation }}, {{ p.location }}</span></li>
+    {%- for l in p.links %}{% if l.url != "" %}
+    <li>{% include icon.html name=l.icon %}<span class="contact-label">{{ l.name }}</span><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | default: l.url | remove: "https://" | remove: "www." }}</a></li>
+    {%- endif %}{% endfor %}
+  </ul>
+</section>

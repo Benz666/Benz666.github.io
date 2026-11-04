@@ -1,0 +1,8 @@
+---
+layout: null
+permalink: /publications.bib
+---
+{%- assign pubs = site.data.publications.papers -%}
+{%- for p in pubs %}
+{% include bibtex.html p=p %}
+{%- endfor %}

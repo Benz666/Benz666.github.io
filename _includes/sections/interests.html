@@ -1,0 +1,16 @@
+{%- assign ri = site.data.interests -%}
+<section class="docs-section" id="research" aria-labelledby="research-h">
+  <h2 id="research-h">Research Interests</h2>
+  <ul class="interest-grid">
+    {%- for i in ri.current %}
+    <li class="interest">
+      <h3>{{ i.title }}</h3>
+      <p>{{ i.text }}</p>
+      {%- if i.graph %}<a class="small-link" href="#graph" data-graph-focus="{{ i.graph }}">See in graph</a>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- if ri.earlier %}
+  <p class="interest-earlier"><strong>{{ ri.earlier.title }}:</strong> {{ ri.earlier.text }}</p>
+  {%- endif %}
+</section>

@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- assign pid = page.path | split: "/" | last | remove: ".md" -%}
+<article class="docs-section project-page">
+  <p class="breadcrumb"><a href="{{ '/#projects' | relative_url }}">← All projects</a></p>
+  <h2>{{ page.title }}</h2>
+  <div class="project-meta">
+    <span class="badge badge-status">{{ page.status }}</span>
+    {%- if page.sponsor %}<span class="badge badge-sponsor">Sponsored by {{ page.sponsor }}</span>{% endif %}
+    <span class="project-period">{{ page.period }}</span>
+  </div>
+
+  <h3 class="subhead">Research question</h3>
+  <p>{{ page.question }}</p>
+
+  {%- if page.methods %}
+  <h3 class="subhead">Methods</h3>
+  <ul>{% for m in page.methods %}<li>{{ m }}</li>{% endfor %}</ul>
+  {%- endif %}
+
+  {%- if page.contributions %}
+  <h3 class="subhead">My contributions</h3>
+  <ul>{% for c in page.contributions %}<li>{{ c }}</li>{% endfor %}</ul>
+  {%- endif %}
+
+  {%- if page.findings %}
+  <h3 class="subhead">Key findings</h3>
+  <p>{{ page.findings }}</p>
+  {%- endif %}
+
+  {%- if page.image %}
+  <figure><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}"><figcaption>{{ page.image_caption }}</figcaption></figure>
+  {%- endif %}
+
+  {%- assign rel = site.data.publications.papers | where: "project", pid -%}
+  {%- if rel.size > 0 %}
+  <h3 class="subhead">Related publications</h3>
+  <ul>{% for r in rel %}<li>{{ r.title }}. <em>{{ r.journal }}</em>, {{ r.year }}. <a href="https://doi.org/{{ r.doi }}" target="_blank" rel="noopener">DOI</a></li>{% endfor %}</ul>
+  {%- endif %}
+
+  {%- assign tk = site.data.talks | where: "project", pid -%}
+  {%- if tk.size > 0 %}
+  <h3 class="subhead">Related talks</h3>
+  <ul>{% for t in tk %}<li>{{ t.title }}. {{ t.event }}, {{ t.date }}.</li>{% endfor %}</ul>
+  {%- endif %}
+
+  {%- if page.code %}
+  <h3 class="subhead">Code</h3>
+  <p><a href="{{ page.code }}" target="_blank" rel="noopener">{{ page.code }}</a></p>
+  {%- endif %}
+
+  <div class="project-notes">{{ content }}</div>
+</article>

@@ -1,0 +1,16 @@
+{%- comment -%} BibTeX entry generated from one item of _data/publications.yml. Param: p {%- endcomment -%}
+{%- assign p = include.p -%}
+{%- capture pages -%}{% if p.pages %}{{ p.pages | replace: "–", "--" }}{% elsif p.number %}{{ p.number }}{% endif %}{%- endcapture -%}
+@article{ {{- p.key -}},
+  title   = { {{- p.title | replace: "&", "\&" -}} },
+  author  = { {{- p.authors | join: " and " -}} },
+  journal = { {{- p.journal | replace: "&", "\&" -}} },
+{%- if p.volume %}
+  volume  = { {{- p.volume -}} },{% endif %}
+{%- if p.issue %}
+  number  = { {{- p.issue -}} },{% endif %}
+{%- if pages != "" %}
+  pages   = { {{- pages -}} },{% endif %}
+  year    = { {{- p.year -}} },
+  doi     = { {{- p.doi -}} }
+}

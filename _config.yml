@@ -1,0 +1,37 @@
+# Site settings. Personal details and links live in _data/profile.yml.
+title: Ben-Chi Ma
+description: >-
+  Ben-Chi Ma, Ph.D. student in Mechanical Engineering at the University of Notre Dame.
+  Phonon thermal transport, machine-learned interatomic potentials and multiscale modeling.
+
+# User site served at the domain root. If you ever move the site to a project
+# repository (https://benz666.github.io/<repo>/), set baseurl: "/<repo>".
+# For a custom domain later, set url to it and add a CNAME file.
+url: "https://benz666.github.io"
+baseurl: ""
+
+lang: en
+timezone: America/Indiana/Indianapolis
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - scripts
+  - node_modules

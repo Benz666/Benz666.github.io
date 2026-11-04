@@ -1,0 +1,14 @@
+{%- assign news = site.data.news | sort: "date" | reverse -%}
+{%- assign cutoff = site.time | date: "%Y" | minus: 1 -%}
+{%- capture recent %}{% for n in news %}{% assign y = n.date | append: "" | slice: 0, 4 | plus: 0 %}{% if y >= cutoff %}{% include news-item.html n=n %}{% endif %}{% endfor %}{% endcapture %}
+{%- capture older %}{% for n in news %}{% assign y = n.date | append: "" | slice: 0, 4 | plus: 0 %}{% if y < cutoff %}{% include news-item.html n=n %}{% endif %}{% endfor %}{% endcapture %}
+<section class="docs-section" id="news" aria-labelledby="news-h">
+  <h2 id="news-h">News</h2>
+  <ul class="news-list">{{ recent }}</ul>
+  {%- if older != "" %}
+  <details class="news-more">
+    <summary>Earlier news (before {{ cutoff }})</summary>
+    <ul class="news-list">{{ older }}</ul>
+  </details>
+  {%- endif %}
+</section>

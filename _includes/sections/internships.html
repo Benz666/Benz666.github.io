@@ -1,0 +1,14 @@
+<section class="docs-section" id="internships" aria-labelledby="internships-h">
+  <h2 id="internships-h">Internships</h2>
+  {%- for i in site.data.internships %}
+  <article class="entry">
+    <div class="entry-head">
+      <h3 class="entry-title">{{ i.organization }}</h3>
+      <span class="entry-date">{{ i.dates }}</span>
+    </div>
+    <p class="entry-sub">{{ i.position }}</p>
+    <p class="entry-meta">{{ i.location }}</p>
+    <ul class="entry-details">{% for x in i.points %}<li>{{ x }}</li>{% endfor %}</ul>
+  </article>
+  {%- endfor %}
+</section>

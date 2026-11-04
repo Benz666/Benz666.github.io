@@ -1,0 +1,29 @@
+{%- assign projects = site.projects | sort: "order" -%}
+<section class="docs-section" id="projects" aria-labelledby="projects-h">
+  <h2 id="projects-h">Research Projects</h2>
+
+  {%- assign groups = "phd|Ph.D. research, University of Notre Dame;earlier|Earlier research, Xi'an Jiaotong University" | split: ";" -%}
+  {%- for g in groups %}
+  {%- assign gk = g | split: "|" | first -%}{%- assign gl = g | split: "|" | last -%}
+  <h3 class="subhead">{{ gl }}</h3>
+  <div class="project-grid">
+    {%- for pr in projects %}{% if pr.group == gk %}
+    {%- assign pid = pr.path | split: "/" | last | remove: ".md" -%}
+    <article class="project-card" id="project-{{ pid }}">
+      <div class="project-meta">
+        <span class="badge badge-status">{{ pr.status }}</span>
+        {%- if pr.sponsor %}<span class="badge badge-sponsor">Sponsored by {{ pr.sponsor }}</span>{% endif %}
+        <span class="project-period">{{ pr.period }}</span>
+      </div>
+      <h4 class="project-title"><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></h4>
+      <p>{{ pr.question | truncatewords: 42 }}</p>
+      {%- assign rel = site.data.publications.papers | where: "project", pid -%}
+      {%- if rel.size > 0 %}
+      <p class="project-pubs">Publications: {% for r in rel %}<a href="#pub-{{ r.key }}">{{ r.journal }} {{ r.year }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      {%- endif %}
+      <a class="small-link" href="{{ pr.url | relative_url }}">Project details →</a>
+    </article>
+    {%- endif %}{% endfor %}
+  </div>
+  {%- endfor %}
+</section>

@@ -1,0 +1,55 @@
+{%- assign pubs = site.data.publications.papers -%}
+{%- assign years = pubs | map: "year" | uniq -%}
+<section class="docs-section" id="publications" aria-labelledby="publications-h">
+  <h2 id="publications-h">Publications</h2>
+
+  <div class="pub-toolbar" role="group" aria-label="Filter publications" hidden>
+    <div class="tab-nav" role="group" aria-label="Year">
+      <button type="button" class="tab active" data-year="all" aria-pressed="true">All</button>
+      {%- for y in years %}<button type="button" class="tab" data-year="{{ y }}" aria-pressed="false">{{ y }}</button>{% endfor %}
+    </div>
+    <label class="pub-select">Project
+      <select id="pub-project">
+        <option value="all">All projects</option>
+        {%- assign projects = site.projects | sort: "order" -%}
+        {%- for pr in projects %}{% assign pid = pr.path | split: "/" | last | remove: ".md" %}
+        {%- assign has = pubs | where: "project", pid -%}{% if has.size > 0 %}
+        <option value="{{ pid }}">{{ pr.short }}</option>{% endif %}{% endfor %}
+      </select>
+    </label>
+  </div>
+
+  <p class="muted small">{{ pubs.size }} journal articles. Your name in bold; † equal contribution.
+    <a href="{{ '/publications.bib' | relative_url }}">Download all as BibTeX</a>.</p>
+
+  {%- for y in years %}
+  <div class="pub-year" data-year="{{ y }}">
+    <h3 class="subhead">{{ y }}</h3>
+    <ol class="pub-list">
+      {%- for p in pubs %}{% if p.year == y %}
+      <li class="pub" id="pub-{{ p.key }}" data-year="{{ p.year }}" data-project="{{ p.project | default: 'none' }}">
+        <p class="pub-title">{{ p.title }}</p>
+        <p class="pub-authors">{% include authors.html authors=p.authors equal=p.equal %}</p>
+        <p class="pub-venue"><em>{{ p.journal }}</em>{% if p.volume %}, {{ p.volume }}{% endif %}{% if p.issue %}({{ p.issue }}){% endif %}{% if p.pages %}:{{ p.pages }}{% elsif p.number %}:{{ p.number }}{% endif %}, {{ p.year }}</p>
+        <div class="pub-buttons">
+          <span class="badge badge-{{ p.status }}">{{ p.status | capitalize }}</span>
+          {%- if p.doi %}<a class="button" href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+          {%- if p.pdf %}<a class="button" href="{{ p.pdf }}">PDF</a>{% endif %}
+          {%- if p.preprint %}<a class="button" href="{{ p.preprint }}" target="_blank" rel="noopener">Preprint</a>{% endif %}
+          {%- if p.project %}{% assign prj = site.projects | where_exp: "x", "x.path contains p.project" | first %}{% if prj %}<a class="button button-quiet" href="{{ prj.url | relative_url }}">Project</a>{% endif %}{% endif %}
+          <details class="bibtex">
+            <summary class="button">BibTeX</summary>
+            <div class="bibtex-box">
+              <pre><code>{% include bibtex.html p=p %}</code></pre>
+              <button type="button" class="button copy-bib">Copy</button>
+            </div>
+          </details>
+        </div>
+      </li>
+      {%- endif %}{% endfor %}
+    </ol>
+  </div>
+  {%- endfor %}
+  <p class="muted small">Full record: <a href="https://orcid.org/0000-0002-1556-5974" target="_blank" rel="noopener">ORCID</a> ·
+    <a href="https://scholar.google.com/citations?hl=en&amp;user=Mv1dsCUAAAAJ" target="_blank" rel="noopener">Google Scholar</a></p>
+</section>

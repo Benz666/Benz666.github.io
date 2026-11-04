@@ -1,0 +1,5 @@
+<section class="docs-section" id="bio" aria-labelledby="bio-h">
+  <h2 id="bio-h">Bio</h2>
+  {%- capture bio %}{% include bio.md %}{% endcapture %}
+  {{ bio | markdownify }}
+</section>

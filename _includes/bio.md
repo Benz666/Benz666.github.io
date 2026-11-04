@@ -1,0 +1,5 @@
+I am a Ph.D. student in Mechanical Engineering at the **University of Notre Dame**, in the Department of Aerospace and Mechanical Engineering, advised by **Prof. Tengfei Luo**. My research develops AI-accelerated multiscale models of **phonon thermal transport**: I connect first-principles calculations and machine-learned interatomic potentials to the phonon Boltzmann transport equation and to device-scale heat conduction.
+
+My current work covers phonon spectra and interfacial thermal transport at defects in GaN-based heterostructures, machine-learned potentials for the thermal conductivity of III–V alloys, band discretization for deterministic phonon BTE solvers, and multiscale thermal modeling of GaN transistors.
+
+Before coming to Notre Dame, I received my M.Phil. (2024) and B.Eng. (2021) from the School of Energy and Power Engineering at **Xi'an Jiaotong University**, where I worked with Prof. Dengwei Jing at the State Key Laboratory of Multiphase Flow in Power Engineering. My work there covered spectral splitting with nanoparticle suspensions for concentrated photovoltaic/thermal–hydrogen systems and passive radiative cooling materials.

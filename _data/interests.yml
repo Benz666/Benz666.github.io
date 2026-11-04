@@ -1,0 +1,25 @@
+# Research interests shown as a short list. `graph` is the matching node id in
+# assets/data/graph-nodes.json (optional), so the item links into the graph.
+current:
+  - title: Phonon and thermal transport
+    text: Lattice thermal conductivity, phonon spectra and interfacial thermal conductance in semiconductors and heterostructures.
+    graph: thermal-transport
+  - title: Phonon Boltzmann transport equation
+    text: Deterministic BTE solvers, phonon band discretization, and coupling the BTE with Fourier conduction for non-Fourier heating.
+    graph: bte
+  - title: Machine-learned interatomic potentials
+    text: Self-trained and foundation potentials (Deep Potential, MACE, DPA) and concurrent learning for phonon-accurate models.
+    graph: mlip
+  - title: Atomistic and multiscale modeling
+    text: Linking first-principles calculations and molecular dynamics to device-scale thermal models of GaN electronics.
+    graph: multiscale
+  - title: Scientific machine learning
+    text: Physics-informed neural networks for phonon transport and AI-accelerated materials modeling.
+    graph: sciml
+  - title: High-performance scientific computing
+    text: GPU-accelerated solvers and reproducible workflows on research clusters.
+    graph: hpc
+earlier:
+  title: Earlier work (Xi'an Jiaotong University)
+  text: Solar spectral splitting with nanoparticle suspensions, concentrated photovoltaic/thermal–hydrogen systems, and passive radiative cooling materials.
+  graph: solar

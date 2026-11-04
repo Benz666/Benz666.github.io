@@ -1,0 +1,28 @@
+# Newest first. `details` lines are shown as a short list under each entry.
+- institution: University of Notre Dame
+  degree: Ph.D. in Mechanical Engineering
+  field: Department of Aerospace and Mechanical Engineering
+  dates: Aug. 2024 – Present
+  location: Notre Dame, IN, USA
+  details:
+    - "Advisor: Prof. Tengfei Luo"
+    - "Research: AI-accelerated multiscale materials modeling and phonon thermal transport in semiconductors and at interfaces"
+
+- institution: Xi'an Jiaotong University
+  degree: M.Phil. in Power Engineering and Engineering Thermophysics
+  field: School of Energy and Power Engineering
+  dates: Sept. 2021 – Jun. 2024
+  location: Xi'an, China
+  gpa: "GPA 3.64/4.0 (rank 2/105)"
+  details:
+    - "Thesis: Optical regulation of nanomaterials for spectral splitting and passive radiative sub-ambient cooling application in solar cell"
+    - "Supervisor: Prof. Dengwei Jing"
+
+- institution: Xi'an Jiaotong University
+  degree: B.Eng. in Mechanical Engineering
+  field: Major in New Energy Science and Engineering, School of Energy and Power Engineering
+  dates: Sept. 2017 – Jul. 2021
+  location: Xi'an, China
+  gpa: "GPA 3.80/4.0 (rank 1/31)"
+  details:
+    - "2019 Hong Kong Polytechnic University Summer International School (two courses, A and A−)"

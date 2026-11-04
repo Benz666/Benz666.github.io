@@ -1,0 +1,9 @@
+{%- comment -%} Author list: bolds your own name, marks equal contribution. Params: authors, equal {%- endcomment -%}
+{%- assign me = site.data.publications.self_names -%}
+{%- for a in include.authors -%}
+{%- assign isme = false -%}{%- if me contains a -%}{%- assign isme = true -%}{%- endif -%}
+{%- assign iseq = false -%}{%- if include.equal and include.equal contains a -%}{%- assign iseq = true -%}{%- endif -%}
+{%- if isme %}<strong class="me">{{ a }}</strong>{% else %}{{ a }}{% endif -%}
+{%- if iseq %}<sup title="Equal contribution">†</sup>{% endif -%}
+{%- unless forloop.last %}, {% endunless -%}
+{%- endfor -%}

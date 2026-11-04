@@ -1,0 +1,45 @@
+{%- assign nodes = site.data.graph.nodes.nodes -%}
+{%- assign edges = site.data.graph.edges.edges -%}
+{%- assign groups = "domain|Research areas;method|Methods;tool|Software & tools;project|Projects" | split: ";" -%}
+<section class="docs-section" id="graph" aria-labelledby="graph-h">
+  <h2 id="graph-h">Research &amp; Skills Graph</h2>
+  <p>How my research areas, methods, software and projects connect. Hover a node to see its connections, or click it (or press Enter) for details and links.
+    Drag nodes to rearrange them and scroll to zoom. Every link reflects actual use in a project or paper. There are no skill scores.</p>
+
+  <div class="graph-ui" hidden>
+    <div class="graph-legend" role="group" aria-label="Show or hide node groups">
+      {%- for g in groups %}{% assign gk = g | split: "|" | first %}{% assign gl = g | split: "|" | last %}
+      <button type="button" class="legend-item" data-group="{{ gk }}" aria-pressed="true"><span class="swatch swatch-{{ gk }}" aria-hidden="true"></span>{{ gl }}</button>
+      {%- endfor %}
+      <button type="button" class="legend-item legend-reset" id="graph-reset">Reset view</button>
+    </div>
+    <div class="graph-layout">
+      <div class="graph-canvas" id="graph-canvas" data-src="{{ '/assets/data/graph.json' | relative_url }}" aria-label="Interactive research graph. Use Tab to move between nodes and Enter to select one."></div>
+      <aside class="graph-panel" id="graph-panel" aria-live="polite">
+        <p class="muted">Select a node to see what it is, how it connects, and related projects or papers.</p>
+      </aside>
+    </div>
+  </div>
+
+  {%- comment -%} Readable fallback: rendered on the server. Shown on narrow screens, with reduced motion, without JavaScript, or on request. {%- endcomment -%}
+  <details class="graph-list" id="graph-list" open>
+    <summary>Graph as a list</summary>
+    <div class="graph-list-grid">
+    {%- for g in groups %}{% assign gk = g | split: "|" | first %}{% assign gl = g | split: "|" | last %}
+      <div>
+        <h3 class="subhead"><span class="swatch swatch-{{ gk }}" aria-hidden="true"></span>{{ gl }}</h3>
+        <dl>
+        {%- for n in nodes %}{% if n.group == gk %}
+          <dt id="node-{{ n.id }}">{{ n.label }}</dt>
+          <dd>{{ n.description }}
+            {%- assign out = edges | where: "source", n.id -%}
+            {%- if out.size > 0 %}<br><span class="muted small">Connects to: {% for e in out %}{% assign t = nodes | where: "id", e.target | first %}{{ e.relation }} <a href="#node-{{ t.id }}">{{ t.label }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}</span>{% endif %}
+            {%- if n.links %}<br>{% for l in n.links %}{% assign u = l.url %}{% assign c0 = u | slice: 0 %}{% if c0 == "/" %}{% assign u = u | relative_url %}{% endif %}<a class="small-link" href="{{ u }}">{{ l.label }}</a> {% endfor %}{% endif %}
+          </dd>
+        {%- endif %}{% endfor %}
+        </dl>
+      </div>
+    {%- endfor %}
+    </div>
+  </details>
+</section>

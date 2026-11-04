@@ -1,0 +1,8 @@
+{%- assign n = include.n -%}
+<li class="news news-{{ n.tag }}">
+  <div class="news-meta">
+    <span class="news-date">{% include date.html d=n.date %}</span>
+    <span class="news-tag">{{ n.tag | capitalize }}</span>
+  </div>
+  <div class="news-content">{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if n.link %} <a class="small-link" href="{{ n.link }}">More</a>{% endif %}</div>
+</li>

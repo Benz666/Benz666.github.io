@@ -1,0 +1,18 @@
+{%- assign labels = "oral:Oral presentation,poster:Poster,invited:Invited talk,technical:Technical presentation,guest-lecture:Guest lecture" | split: "," -%}
+<section class="docs-section" id="talks" aria-labelledby="talks-h">
+  <h2 id="talks-h">Talks &amp; Presentations</h2>
+  <ol class="talk-list">
+    {%- for t in site.data.talks %}
+    {%- assign label = t.type -%}{%- for l in labels %}{% assign kv = l | split: ":" %}{% if kv[0] == t.type %}{% assign label = kv[1] %}{% endif %}{% endfor -%}
+    <li class="talk">
+      <div class="entry-head">
+        <p class="talk-title">{{ t.title }}</p>
+        <span class="entry-date">{{ t.date }}</span>
+      </div>
+      <p class="entry-meta"><span class="badge badge-talk-{{ t.type }}">{{ label }}</span>
+        {% if t.url %}<a href="{{ t.url }}" target="_blank" rel="noopener">{{ t.event }}</a>{% else %}{{ t.event }}{% endif %} · {{ t.location }}</p>
+      {%- if t.authors %}<p class="muted small">{{ t.authors }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

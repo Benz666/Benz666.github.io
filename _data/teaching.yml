@@ -1,0 +1,41 @@
+# Teaching, newest first. `role` must describe what you actually did.
+- course: Design Tools II
+  code: AME 21268
+  institution: University of Notre Dame
+  department: Department of Aerospace and Mechanical Engineering
+  role: Teaching Assistant (in-class)
+  dates: Fall 2024 – Present
+  level: Undergraduate engineering course
+  summary: >-
+    Support students during class sessions and grade homework and the final assessments
+    of this hands-on engineering design course.
+  topics:
+    - SolidWorks-based 3D CAD modeling
+    - Computer-aided manufacturing (CAM) simulation
+    - Engineering mechanics and structural analysis
+    - Ackermann steering geometry and steering-system design
+    - Engineering design projects and practical problem-solving
+
+- course: Academic English Writing
+  code: ""
+  institution: University of Notre Dame
+  role: Guest instructional session
+  dates: Fall 2024
+  level: Non-credit English writing course
+  summary: >-
+    Delivered an in-class session introducing Zotero as a reference manager for academic writing.
+  topics:
+    - Organizing literature in a Zotero library
+    - Citation and bibliography management
+    - Zotero workflows for writing papers
+    - Efficient scholarly reference management
+
+- course: Hydrogen and New Energy Power Systems
+  code: ""
+  institution: Xi'an Jiaotong University
+  role: Teaching Assistant
+  dates: Sept. 2021 – Dec. 2022
+  level: Undergraduate course
+  summary: >-
+    Taught laboratory classes for 82 students (up to 8 hours) and evaluated and totaled student grades.
+  topics: []

@@ -1,0 +1,38 @@
+# Talks and presentations, newest first.
+# type: oral | poster | invited | technical | guest-lecture
+- date: Sept. 2026
+  type: poster
+  title: Machine-learning-assisted multiscale phonon transport in AlGaN/GaN HEMTs
+  event: SciML Workshop at the University of Notre Dame (SciML@ND 2026)
+  location: Notre Dame, IN, USA
+  url: "https://sciml26nd.github.io/"
+  project: gan-device-thermal
+
+- date: May 2026
+  type: oral
+  title: Concurrent-learning Deep Potential for thermal transport in In₁₋ₓGaₓAs alloys
+  authors: Ben-Chi Ma, Zhihao Xu, Tengfei Luo
+  event: 42nd International Conference on Thermoelectrics (ICT 2026)
+  location: Houston, TX, USA
+  project: ingaas-mlip
+
+- date: Jul. 2025
+  type: technical
+  title: "Multiscale thermal transport modeling for GaN transistors: Bridging first-principles and the phonon Boltzmann equation"
+  event: ASME 2025 Summer Heat Transfer Conference (SHTC 2025), paper SHTC2025-164577
+  location: Westminster, CO, USA
+  project: gan-device-thermal
+
+- date: Oct. 2023
+  type: oral
+  title: Spectrally modulated thermoplastic polyurethane films with gas–solid micro/nanostructures for radiative cooling
+  event: Annual Conference on Multiphase Flow, Chinese Society of Engineering Thermophysics
+  location: Shanghai, China
+  project: radiative-cooling
+
+- date: Dec. 2021
+  type: oral
+  title: Study on the compatibility of spectral selective regulation between Pt@TiO₂ photothermal catalytic nanofluid and concentrated photovoltaics
+  event: Annual Conference on Multiphase Flow, Chinese Society of Engineering Thermophysics
+  location: Suzhou, China
+  project: cpvt-hydrogen

@@ -1,0 +1,17 @@
+<section class="docs-section" id="teaching" aria-labelledby="teaching-h">
+  <h2 id="teaching-h">Teaching</h2>
+  {%- for t in site.data.teaching %}
+  <article class="entry">
+    <div class="entry-head">
+      <h3 class="entry-title">{{ t.course }}{% if t.code != "" %} <span class="muted">({{ t.code }})</span>{% endif %}</h3>
+      <span class="entry-date">{{ t.dates }}</span>
+    </div>
+    <p class="entry-sub">{{ t.role }}</p>
+    <p class="entry-meta">{{ t.institution }}{% if t.department %} · {{ t.department }}{% endif %} · {{ t.level }}</p>
+    <p>{{ t.summary }}</p>
+    {%- if t.topics.size > 0 %}
+    <ul class="tag-list" aria-label="Topics">{% for x in t.topics %}<li>{{ x }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</section>

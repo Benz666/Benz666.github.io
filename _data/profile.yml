@@ -1,0 +1,21 @@
+# Header, contact and link data. Only verified, public information belongs here.
+# Do not add a phone number or home address: this file is published.
+name: Ben-Chi Ma
+position: Ph.D. Student in Mechanical Engineering
+department: Department of Aerospace and Mechanical Engineering
+affiliation: University of Notre Dame
+location: Notre Dame, IN, USA
+advisor:
+  name: Prof. Tengfei Luo
+  url: ""          # optional: lab or advisor page
+photo: /assets/img/headshot.jpg
+email: bma@nd.edu
+cv_pdf: /assets/cv/CV_Ben-Chi_Ma.pdf
+cv_updated: Nov. 2026
+
+# Links shown in the header and in Contact. Leave a url empty to hide it.
+links:
+  - { name: Google Scholar, icon: scholar, url: "https://scholar.google.com/citations?hl=en&user=Mv1dsCUAAAAJ" }
+  - { name: ORCID, icon: orcid, url: "https://orcid.org/0000-0002-1556-5974", label: "0000-0002-1556-5974" }
+  - { name: GitHub, icon: github, url: "https://github.com/Benz666", label: "Benz666" }
+  - { name: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/ben-chi-ma-206b6925a/" }
