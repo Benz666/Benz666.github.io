@@ -16,7 +16,10 @@ methods:
 contributions:
   - Designed and implemented the binning schemes and the band-budget selector, with unit tests
   - Built the benchmark suite and the analysis
-findings: Results will be shared after publication.
+findings: >-
+  Among the binning schemes benchmarked, frequency–mean-free-path binning is the only one that keeps
+  both bulk thermal transport and interface transmission accurate at a fixed band budget.
+  Quantitative results will be shared after publication.
 ---
 
 Code contributions were made to the JAX-BTE solver. Details will be added after publication.

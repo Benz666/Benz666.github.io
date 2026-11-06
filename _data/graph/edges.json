@@ -1,77 +1,340 @@
 {
   "_comment": "Edges of the Research & Skills Graph. Every edge must be backed by a project, paper, talk or CV entry. relation is shown in the node detail panel.",
   "edges": [
-    { "source": "phonon-properties", "target": "thermal-transport", "relation": "underlies" },
-    { "source": "interfacial", "target": "thermal-transport", "relation": "part of" },
-    { "source": "multiscale", "target": "thermal-transport", "relation": "approach to" },
-    { "source": "device-thermal", "target": "multiscale", "relation": "studied with" },
-    { "source": "sciml", "target": "mlip", "relation": "includes" },
-    { "source": "sciml", "target": "pinn", "relation": "includes" },
-
-    { "source": "dft", "target": "mlip", "relation": "training data for" },
-    { "source": "mlip", "target": "md", "relation": "drives" },
-    { "source": "mlip", "target": "lattice-dynamics", "relation": "force constants for" },
-    { "source": "md", "target": "phonon-properties", "relation": "vibrational spectra" },
-    { "source": "lattice-dynamics", "target": "phonon-properties", "relation": "computes" },
-    { "source": "lattice-dynamics", "target": "bte", "relation": "mode properties for" },
-    { "source": "bte", "target": "thermal-transport", "relation": "models" },
-    { "source": "bte", "target": "bte-fourier", "relation": "coupled in" },
-    { "source": "bte-fourier", "target": "multiscale", "relation": "realizes" },
-    { "source": "agf", "target": "interfacial", "relation": "computes conductance" },
-    { "source": "pinn", "target": "bte", "relation": "solves" },
-    { "source": "experiments", "target": "solar", "relation": "used in" },
-
-    { "source": "vasp", "target": "dft", "relation": "implements" },
-    { "source": "lammps", "target": "md", "relation": "implements" },
-    { "source": "ase", "target": "md", "relation": "implements" },
-    { "source": "deepmd", "target": "mlip", "relation": "implements" },
-    { "source": "dpgen", "target": "deepmd", "relation": "trains" },
-    { "source": "mace", "target": "mlip", "relation": "implements" },
-    { "source": "dpa", "target": "mlip", "relation": "implements" },
-    { "source": "phono3py", "target": "lattice-dynamics", "relation": "implements" },
-    { "source": "alamode", "target": "lattice-dynamics", "relation": "implements" },
-    { "source": "jaxbte", "target": "bte", "relation": "implements" },
-    { "source": "jax", "target": "jaxbte", "relation": "built on" },
-    { "source": "python", "target": "jax", "relation": "host language" },
-    { "source": "gpu", "target": "hpc", "relation": "part of" },
-    { "source": "clusters", "target": "hpc", "relation": "part of" },
-    { "source": "jaxbte", "target": "gpu", "relation": "runs on" },
-    { "source": "comsol", "target": "solar", "relation": "used in" },
-    { "source": "agents", "target": "python", "relation": "develops" },
-
-    { "source": "p-gan-al2o3", "target": "md", "relation": "uses" },
-    { "source": "p-gan-al2o3", "target": "mace", "relation": "uses" },
-    { "source": "p-gan-al2o3", "target": "lammps", "relation": "uses" },
-    { "source": "p-gan-al2o3", "target": "agf", "relation": "uses" },
-    { "source": "p-gan-al2o3", "target": "phonon-properties", "relation": "studies" },
-    { "source": "p-gan-al2o3", "target": "interfacial", "relation": "studies" },
-    { "source": "p-gan-al2o3", "target": "clusters", "relation": "runs on" },
-
-    { "source": "p-ingaas", "target": "deepmd", "relation": "uses" },
-    { "source": "p-ingaas", "target": "dpgen", "relation": "uses" },
-    { "source": "p-ingaas", "target": "vasp", "relation": "uses" },
-    { "source": "p-ingaas", "target": "mace", "relation": "benchmarks" },
-    { "source": "p-ingaas", "target": "dpa", "relation": "benchmarks" },
-    { "source": "p-ingaas", "target": "phono3py", "relation": "uses" },
-    { "source": "p-ingaas", "target": "alamode", "relation": "cross-checks with" },
-    { "source": "p-ingaas", "target": "thermal-transport", "relation": "studies" },
-    { "source": "p-ingaas", "target": "clusters", "relation": "runs on" },
-
-    { "source": "p-gan-device", "target": "bte-fourier", "relation": "uses" },
-    { "source": "p-gan-device", "target": "jaxbte", "relation": "uses" },
-    { "source": "p-gan-device", "target": "alamode", "relation": "mode tables from" },
-    { "source": "p-gan-device", "target": "device-thermal", "relation": "studies" },
-    { "source": "p-gan-device", "target": "gpu", "relation": "runs on" },
-
-    { "source": "p-jaxbte", "target": "jaxbte", "relation": "extends" },
-    { "source": "p-jaxbte", "target": "bte", "relation": "improves" },
-    { "source": "p-jaxbte", "target": "interfacial", "relation": "studies" },
-
-    { "source": "p-pinn", "target": "pinn", "relation": "uses" },
-    { "source": "p-pinn", "target": "bte", "relation": "solves" },
-
-    { "source": "p-solar", "target": "solar", "relation": "studies" },
-    { "source": "p-solar", "target": "experiments", "relation": "uses" },
-    { "source": "p-solar", "target": "comsol", "relation": "uses" }
+    {
+      "source": "phonon-properties",
+      "target": "thermal-transport",
+      "relation": "underlies"
+    },
+    {
+      "source": "interfacial",
+      "target": "thermal-transport",
+      "relation": "part of"
+    },
+    {
+      "source": "multiscale",
+      "target": "thermal-transport",
+      "relation": "approach to"
+    },
+    {
+      "source": "device-thermal",
+      "target": "multiscale",
+      "relation": "studied with"
+    },
+    {
+      "source": "sciml",
+      "target": "mlip",
+      "relation": "includes"
+    },
+    {
+      "source": "sciml",
+      "target": "pinn",
+      "relation": "includes"
+    },
+    {
+      "source": "dft",
+      "target": "mlip",
+      "relation": "training data for"
+    },
+    {
+      "source": "mlip",
+      "target": "md",
+      "relation": "drives"
+    },
+    {
+      "source": "mlip",
+      "target": "lattice-dynamics",
+      "relation": "force constants for"
+    },
+    {
+      "source": "md",
+      "target": "phonon-properties",
+      "relation": "vibrational spectra"
+    },
+    {
+      "source": "lattice-dynamics",
+      "target": "phonon-properties",
+      "relation": "computes"
+    },
+    {
+      "source": "lattice-dynamics",
+      "target": "bte",
+      "relation": "mode properties for"
+    },
+    {
+      "source": "bte",
+      "target": "thermal-transport",
+      "relation": "models"
+    },
+    {
+      "source": "bte",
+      "target": "bte-fourier",
+      "relation": "coupled in"
+    },
+    {
+      "source": "bte-fourier",
+      "target": "multiscale",
+      "relation": "realizes"
+    },
+    {
+      "source": "agf",
+      "target": "interfacial",
+      "relation": "computes conductance"
+    },
+    {
+      "source": "pinn",
+      "target": "bte",
+      "relation": "solves"
+    },
+    {
+      "source": "experiments",
+      "target": "solar",
+      "relation": "used in"
+    },
+    {
+      "source": "vasp",
+      "target": "dft",
+      "relation": "implements"
+    },
+    {
+      "source": "lammps",
+      "target": "md",
+      "relation": "implements"
+    },
+    {
+      "source": "ase",
+      "target": "md",
+      "relation": "implements"
+    },
+    {
+      "source": "deepmd",
+      "target": "mlip",
+      "relation": "implements"
+    },
+    {
+      "source": "dpgen",
+      "target": "deepmd",
+      "relation": "trains"
+    },
+    {
+      "source": "mace",
+      "target": "mlip",
+      "relation": "implements"
+    },
+    {
+      "source": "dpa",
+      "target": "mlip",
+      "relation": "implements"
+    },
+    {
+      "source": "phono3py",
+      "target": "lattice-dynamics",
+      "relation": "implements"
+    },
+    {
+      "source": "alamode",
+      "target": "lattice-dynamics",
+      "relation": "implements"
+    },
+    {
+      "source": "jaxbte",
+      "target": "bte",
+      "relation": "implements"
+    },
+    {
+      "source": "jax",
+      "target": "jaxbte",
+      "relation": "built on"
+    },
+    {
+      "source": "python",
+      "target": "jax",
+      "relation": "host language"
+    },
+    {
+      "source": "gpu",
+      "target": "hpc",
+      "relation": "part of"
+    },
+    {
+      "source": "clusters",
+      "target": "hpc",
+      "relation": "part of"
+    },
+    {
+      "source": "jaxbte",
+      "target": "gpu",
+      "relation": "runs on"
+    },
+    {
+      "source": "comsol",
+      "target": "solar",
+      "relation": "used in"
+    },
+    {
+      "source": "agents",
+      "target": "python",
+      "relation": "develops"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "md",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "mace",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "lammps",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "agf",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "phonon-properties",
+      "relation": "studies"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "interfacial",
+      "relation": "studies"
+    },
+    {
+      "source": "p-gan-al2o3",
+      "target": "clusters",
+      "relation": "runs on"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "deepmd",
+      "relation": "uses"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "dpgen",
+      "relation": "uses"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "vasp",
+      "relation": "uses"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "mace",
+      "relation": "benchmarks"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "dpa",
+      "relation": "benchmarks"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "phono3py",
+      "relation": "uses"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "alamode",
+      "relation": "cross-checks with"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "thermal-transport",
+      "relation": "studies"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "clusters",
+      "relation": "runs on"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "bte-fourier",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "jaxbte",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "alamode",
+      "relation": "mode tables from"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "device-thermal",
+      "relation": "studies"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "gpu",
+      "relation": "runs on"
+    },
+    {
+      "source": "p-jaxbte",
+      "target": "jaxbte",
+      "relation": "extends"
+    },
+    {
+      "source": "p-jaxbte",
+      "target": "bte",
+      "relation": "improves"
+    },
+    {
+      "source": "p-jaxbte",
+      "target": "interfacial",
+      "relation": "studies"
+    },
+    {
+      "source": "p-pinn",
+      "target": "pinn",
+      "relation": "uses"
+    },
+    {
+      "source": "p-pinn",
+      "target": "bte",
+      "relation": "solves"
+    },
+    {
+      "source": "p-solar",
+      "target": "solar",
+      "relation": "studies"
+    },
+    {
+      "source": "p-solar",
+      "target": "experiments",
+      "relation": "uses"
+    },
+    {
+      "source": "p-solar",
+      "target": "comsol",
+      "relation": "uses"
+    },
+    {
+      "source": "cuda",
+      "target": "gpu",
+      "relation": "programs"
+    },
+    {
+      "source": "cuda",
+      "target": "bte",
+      "relation": "accelerates"
+    },
+    {
+      "source": "openmp",
+      "target": "hpc",
+      "relation": "part of"
+    }
   ]
 }

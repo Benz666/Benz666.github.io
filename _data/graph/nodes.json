@@ -1,76 +1,303 @@
 {
   "_comment": "Nodes of the Research & Skills Graph. group: domain | method | tool | project. Links are site-relative ('/projects/<id>/', '#pub-<key>', '#talks') or absolute URLs. No skill levels by design.",
   "nodes": [
-    { "id": "thermal-transport", "label": "Phonon thermal transport", "group": "domain",
-      "description": "Lattice thermal conductivity and phonon-mediated heat flow in semiconductors and heterostructures. The common thread of my Ph.D. research." },
-    { "id": "phonon-properties", "label": "Phonon properties", "group": "domain",
-      "description": "Phonon dispersion, density of states, lifetimes and localized vibrational modes, including region-resolved spectra at defects." },
-    { "id": "interfacial", "label": "Interfacial thermal transport", "group": "domain",
-      "description": "Heat transfer across material interfaces and defects, such as dislocations at GaN/sapphire interfaces and band-paired interface transmission in BTE solvers." },
-    { "id": "multiscale", "label": "Multiscale modeling", "group": "domain",
-      "description": "Connecting first-principles and atomistic results to the phonon BTE and to device-scale Fourier models." },
-    { "id": "device-thermal", "label": "Thermal management of GaN electronics", "group": "domain",
-      "description": "Channel temperature and thermal resistance of GaN power and RF transistors." },
-    { "id": "sciml", "label": "Scientific machine learning", "group": "domain",
-      "description": "Machine learning built on physics: learned interatomic potentials and physics-informed neural networks for transport equations." },
-    { "id": "hpc", "label": "High-performance computing", "group": "domain",
-      "description": "GPU-accelerated solvers and large simulation campaigns on research clusters." },
-    { "id": "solar", "label": "Solar energy and radiative cooling", "group": "domain",
-      "description": "Earlier work at Xi'an Jiaotong University: spectral splitting for CPV/T–hydrogen systems, radiative cooling films and solar water harvesting." },
-
-    { "id": "dft", "label": "Density functional theory", "group": "method",
-      "description": "First-principles energies and forces used as training data for machine-learned potentials and as reference phonon calculations." },
-    { "id": "md", "label": "Molecular dynamics", "group": "method",
-      "description": "Equilibrium MD for vibrational spectra (velocity autocorrelation) of large interface models." },
-    { "id": "mlip", "label": "Machine-learned interatomic potentials", "group": "method",
-      "description": "Self-trained Deep Potential models and foundation potentials (MACE, DPA) that bring near-DFT accuracy to large systems." },
-    { "id": "lattice-dynamics", "label": "Anharmonic lattice dynamics", "group": "method",
-      "description": "Harmonic and third-order force constants, three-phonon scattering and lattice thermal conductivity." },
-    { "id": "bte", "label": "Phonon Boltzmann transport equation", "group": "method",
-      "description": "Deterministic, multi-band solutions of the phonon BTE for non-diffusive heat transport, including band discretization." },
-    { "id": "bte-fourier", "label": "Coupled BTE–Fourier modeling", "group": "method",
-      "description": "Solving the BTE near nanoscale hot spots and Fourier conduction in the rest of the device." },
-    { "id": "agf", "label": "Atomistic Green's function", "group": "method",
-      "description": "Elastic phonon transmission and interfacial thermal conductance from harmonic force constants." },
-    { "id": "pinn", "label": "Physics-informed neural networks", "group": "method",
-      "description": "Neural-network solvers for the phonon BTE with hard-encoded, angle-dependent boundary conditions." },
-    { "id": "experiments", "label": "Optical and thermal experiments", "group": "method",
-      "description": "Nanomaterial and composite preparation; spectrophotometry, FT-IR, SEM, XRD, GC; outdoor cooling and system tests." },
-
-    { "id": "vasp", "label": "VASP", "group": "tool", "description": "DFT code used for first-principles reference data." },
-    { "id": "lammps", "label": "LAMMPS", "group": "tool", "description": "Molecular dynamics engine, used in the GaN/Al₂O₃ interface work." },
-    { "id": "ase", "label": "ASE", "group": "tool", "description": "Atomic Simulation Environment for building structures and driving calculators." },
-    { "id": "deepmd", "label": "DeePMD-kit", "group": "tool", "description": "Training and running Deep Potential models." },
-    { "id": "dpgen", "label": "DP-GEN", "group": "tool", "description": "Concurrent (active) learning to grow Deep Potential training sets." },
-    { "id": "mace", "label": "MACE", "group": "tool", "description": "Equivariant foundation interatomic potential." },
-    { "id": "dpa", "label": "DPA", "group": "tool", "description": "Pretrained Deep Potential foundation model." },
-    { "id": "phono3py", "label": "phono3py", "group": "tool", "description": "Anharmonic phonon calculations and lattice thermal conductivity." },
-    { "id": "alamode", "label": "ALAMODE", "group": "tool", "description": "Force constants and phonon properties; also supplies mode tables for BTE solvers." },
-    { "id": "jaxbte", "label": "JAX-BTE", "group": "tool", "description": "GPU deterministic phonon BTE solver written in JAX; I contributed band discretization schemes." },
-    { "id": "python", "label": "Python", "group": "tool", "description": "Main language for simulation workflows and analysis (NumPy, SciPy)." },
-    { "id": "jax", "label": "JAX", "group": "tool", "description": "Array programming and GPU acceleration for BTE solvers." },
-    { "id": "gpu", "label": "GPU computing", "group": "tool", "description": "Multi-GPU workstation and cluster runs of BTE and MLIP workloads." },
-    { "id": "clusters", "label": "UGE / HTCondor clusters", "group": "tool", "description": "Batch computing at the Notre Dame Center for Research Computing." },
-    { "id": "comsol", "label": "COMSOL Multiphysics", "group": "tool", "description": "Finite-element heat transfer and optics simulation in the earlier solar energy projects." },
-    { "id": "agents", "label": "AI coding agents", "group": "tool", "description": "Agentic development with Claude Code and Codex, plus a multi-agent research workflow with Git-versioned shared project memory." },
-
-    { "id": "p-gan-al2o3", "label": "GaN/Al₂O₃ dislocation phonons", "group": "project",
+    {
+      "id": "thermal-transport",
+      "label": "Phonon thermal transport",
+      "group": "domain",
+      "description": "Lattice thermal conductivity and phonon-mediated heat flow in semiconductors and heterostructures. The common thread of my Ph.D. research."
+    },
+    {
+      "id": "phonon-properties",
+      "label": "Phonon properties",
+      "group": "domain",
+      "description": "Phonon dispersion, density of states, lifetimes and localized vibrational modes, including region-resolved spectra at defects."
+    },
+    {
+      "id": "interfacial",
+      "label": "Interfacial thermal transport",
+      "group": "domain",
+      "description": "Heat transfer across material interfaces and defects, such as dislocations at GaN/sapphire interfaces and band-paired interface transmission in BTE solvers."
+    },
+    {
+      "id": "multiscale",
+      "label": "Multiscale modeling",
+      "group": "domain",
+      "description": "Connecting first-principles and atomistic results to the phonon BTE and to device-scale Fourier models."
+    },
+    {
+      "id": "device-thermal",
+      "label": "Thermal management of GaN electronics",
+      "group": "domain",
+      "description": "Channel temperature and thermal resistance of GaN power and RF transistors."
+    },
+    {
+      "id": "sciml",
+      "label": "Scientific machine learning",
+      "group": "domain",
+      "description": "Machine learning built on physics: learned interatomic potentials and physics-informed neural networks for transport equations."
+    },
+    {
+      "id": "hpc",
+      "label": "High-performance computing",
+      "group": "domain",
+      "description": "GPU-accelerated solvers and large simulation campaigns on research clusters."
+    },
+    {
+      "id": "solar",
+      "label": "Solar energy and radiative cooling",
+      "group": "domain",
+      "description": "Earlier work at Xi'an Jiaotong University: spectral splitting for CPV/T–hydrogen systems, radiative cooling films and solar water harvesting."
+    },
+    {
+      "id": "dft",
+      "label": "Density functional theory",
+      "group": "method",
+      "description": "First-principles energies and forces used as training data for machine-learned potentials and as reference phonon calculations."
+    },
+    {
+      "id": "md",
+      "label": "Molecular dynamics",
+      "group": "method",
+      "description": "Equilibrium MD for vibrational spectra (velocity autocorrelation) of large interface models."
+    },
+    {
+      "id": "mlip",
+      "label": "Machine-learned interatomic potentials",
+      "group": "method",
+      "description": "Self-trained Deep Potential models and foundation potentials (MACE, DPA) that bring near-DFT accuracy to large systems."
+    },
+    {
+      "id": "lattice-dynamics",
+      "label": "Anharmonic lattice dynamics",
+      "group": "method",
+      "description": "Harmonic and third-order force constants, three-phonon scattering and lattice thermal conductivity."
+    },
+    {
+      "id": "bte",
+      "label": "Phonon Boltzmann transport equation",
+      "group": "method",
+      "description": "Deterministic, multi-band solutions of the phonon BTE for non-diffusive heat transport, including band discretization."
+    },
+    {
+      "id": "bte-fourier",
+      "label": "Coupled BTE–Fourier modeling",
+      "group": "method",
+      "description": "Solving the BTE near nanoscale hot spots and Fourier conduction in the rest of the device."
+    },
+    {
+      "id": "agf",
+      "label": "Atomistic Green's function",
+      "group": "method",
+      "description": "Elastic phonon transmission and interfacial thermal conductance from harmonic force constants."
+    },
+    {
+      "id": "pinn",
+      "label": "Physics-informed neural networks",
+      "group": "method",
+      "description": "Neural-network solvers for the phonon BTE with hard-encoded, angle-dependent boundary conditions."
+    },
+    {
+      "id": "experiments",
+      "label": "Optical and thermal experiments",
+      "group": "method",
+      "description": "Nanomaterial and composite preparation; spectrophotometry, FT-IR, SEM, XRD, GC; outdoor cooling and system tests."
+    },
+    {
+      "id": "vasp",
+      "label": "VASP",
+      "group": "tool",
+      "description": "DFT code used for first-principles reference data."
+    },
+    {
+      "id": "lammps",
+      "label": "LAMMPS",
+      "group": "tool",
+      "description": "Molecular dynamics engine, used in the GaN/Al₂O₃ interface work."
+    },
+    {
+      "id": "ase",
+      "label": "ASE",
+      "group": "tool",
+      "description": "Atomic Simulation Environment for building structures and driving calculators."
+    },
+    {
+      "id": "deepmd",
+      "label": "DeePMD-kit",
+      "group": "tool",
+      "description": "Training and running Deep Potential models."
+    },
+    {
+      "id": "dpgen",
+      "label": "DP-GEN",
+      "group": "tool",
+      "description": "Concurrent (active) learning to grow Deep Potential training sets."
+    },
+    {
+      "id": "mace",
+      "label": "MACE",
+      "group": "tool",
+      "description": "Equivariant foundation interatomic potential."
+    },
+    {
+      "id": "dpa",
+      "label": "DPA",
+      "group": "tool",
+      "description": "Pretrained Deep Potential foundation model."
+    },
+    {
+      "id": "phono3py",
+      "label": "phono3py",
+      "group": "tool",
+      "description": "Anharmonic phonon calculations and lattice thermal conductivity."
+    },
+    {
+      "id": "alamode",
+      "label": "ALAMODE",
+      "group": "tool",
+      "description": "Force constants and phonon properties; also supplies mode tables for BTE solvers."
+    },
+    {
+      "id": "jaxbte",
+      "label": "JAX-BTE",
+      "group": "tool",
+      "description": "GPU deterministic phonon BTE solver written in JAX; I contributed band discretization schemes."
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "tool",
+      "description": "Main language for simulation workflows and analysis (NumPy, SciPy)."
+    },
+    {
+      "id": "jax",
+      "label": "JAX",
+      "group": "tool",
+      "description": "Array programming and GPU acceleration for BTE solvers."
+    },
+    {
+      "id": "gpu",
+      "label": "GPU computing",
+      "group": "tool",
+      "description": "Multi-GPU workstation and cluster runs of BTE and MLIP workloads."
+    },
+    {
+      "id": "cuda",
+      "label": "C / CUDA",
+      "group": "tool",
+      "description": "GPU programming in C/CUDA (resident data, CUDA Graphs, streams); used to port a 1D phonon BTE solver and other kernels in CSE 60772 coursework."
+    },
+    {
+      "id": "openmp",
+      "label": "OpenMP / SIMD",
+      "group": "tool",
+      "description": "Shared-memory parallelism (OpenMP tasking, SIMD) and AVX2 intrinsics, scaled to 64 CPU cores in CSE 60772 coursework."
+    },
+    {
+      "id": "clusters",
+      "label": "UGE / HTCondor clusters",
+      "group": "tool",
+      "description": "Batch computing at the Notre Dame Center for Research Computing."
+    },
+    {
+      "id": "comsol",
+      "label": "COMSOL Multiphysics",
+      "group": "tool",
+      "description": "Finite-element heat transfer and optics simulation in the earlier solar energy projects."
+    },
+    {
+      "id": "agents",
+      "label": "AI coding agents",
+      "group": "tool",
+      "description": "Agentic development with Claude Code and Codex, plus a multi-agent research workflow with Git-versioned shared project memory."
+    },
+    {
+      "id": "p-gan-al2o3",
+      "label": "GaN/Al₂O₃ dislocation phonons",
+      "group": "project",
       "description": "Phonon spectra and interfacial thermal transport at dislocation cores. Manuscript in preparation.",
-      "links": [{ "label": "Project page", "url": "/projects/gan-al2o3-interface/" }] },
-    { "id": "p-ingaas", "label": "MLIPs for InGaAs", "group": "project",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/gan-al2o3-interface/"
+        }
+      ]
+    },
+    {
+      "id": "p-ingaas",
+      "label": "MLIPs for InGaAs",
+      "group": "project",
       "description": "Concurrent-learning Deep Potential and foundation potentials for thermal transport in InGaAs alloys. Presented at ICT 2026.",
-      "links": [{ "label": "Project page", "url": "/projects/ingaas-mlip/" }, { "label": "Talks", "url": "#talks" }] },
-    { "id": "p-gan-device", "label": "GaN transistor thermal modeling", "group": "project",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/ingaas-mlip/"
+        },
+        {
+          "label": "Talks",
+          "url": "#talks"
+        }
+      ]
+    },
+    {
+      "id": "p-gan-device",
+      "label": "GaN transistor thermal modeling",
+      "group": "project",
       "description": "Multiscale BTE–Fourier thermal modeling of GaN transistors, sponsored by Lockheed Martin. Presented at SHTC 2025 and SciML@ND 2026.",
-      "links": [{ "label": "Project page", "url": "/projects/gan-device-thermal/" }, { "label": "Talks", "url": "#talks" }] },
-    { "id": "p-jaxbte", "label": "BTE band discretization", "group": "project",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/gan-device-thermal/"
+        },
+        {
+          "label": "Talks",
+          "url": "#talks"
+        }
+      ]
+    },
+    {
+      "id": "p-jaxbte",
+      "label": "BTE band discretization",
+      "group": "project",
       "description": "Frequency–mean-free-path band binning for deterministic phonon BTE solvers. Manuscript in preparation.",
-      "links": [{ "label": "Project page", "url": "/projects/jaxbte-band-discretization/" }] },
-    { "id": "p-pinn", "label": "PINN for phonon BTE (paper)", "group": "project",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/jaxbte-band-discretization/"
+        }
+      ]
+    },
+    {
+      "id": "p-pinn",
+      "label": "PINN for phonon BTE (paper)",
+      "group": "project",
       "description": "Co-authored paper: physics-informed neural networks with hard-encoded angle-dependent boundary conditions for the phonon BTE, Materials Today Physics (2025).",
-      "links": [{ "label": "Publication", "url": "#pub-zhou2025pinn" }] },
-    { "id": "p-solar", "label": "Solar energy projects (XJTU)", "group": "project",
+      "links": [
+        {
+          "label": "Publication",
+          "url": "#pub-zhou2025pinn"
+        }
+      ]
+    },
+    {
+      "id": "p-solar",
+      "label": "Solar energy projects (XJTU)",
+      "group": "project",
       "description": "Radiative cooling films, CPV/T–hydrogen spectral splitting and solar water harvesting; 11 journal papers.",
-      "links": [{ "label": "Radiative cooling", "url": "/projects/radiative-cooling/" }, { "label": "CPV/T–hydrogen", "url": "/projects/cpvt-hydrogen/" }, { "label": "Water harvesting", "url": "/projects/water-harvesting/" }] }
+      "links": [
+        {
+          "label": "Radiative cooling",
+          "url": "/projects/radiative-cooling/"
+        },
+        {
+          "label": "CPV/T–hydrogen",
+          "url": "/projects/cpvt-hydrogen/"
+        },
+        {
+          "label": "Water harvesting",
+          "url": "/projects/water-harvesting/"
+        }
+      ]
+    }
   ]
 }
