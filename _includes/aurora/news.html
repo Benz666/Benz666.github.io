@@ -9,12 +9,12 @@
   </div>
   <ul class="a-slider" id="a-slider" tabindex="0" aria-label="News, newest first">
     {%- for n in news %}
-    <li class="a-slide">
+    <li class="a-slide a-card{% if n.link %} is-linked{% endif %}">
       <p class="a-slide-date">{% include date.html d=n.date %}</p>
       <div class="a-slide-body">
         <p class="a-slide-tag">{{ n.tag | capitalize }}</p>
         <p>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
-        {%- if n.link %}<a class="a-sq a-slide-more" href="{{ n.link }}" aria-label="More about this">{% include aurora/arrow.html dir="out" %}</a>{% endif %}
+        {%- if n.link %}<a class="a-sq a-card-link a-slide-more" href="{{ n.link }}" aria-label="More about this news item">{% include aurora/arrow.html dir="out" %}</a>{% endif %}
       </div>
     </li>
     {%- endfor %}

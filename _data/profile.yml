@@ -7,7 +7,7 @@ affiliation: University of Notre Dame
 location: Notre Dame, IN, USA
 advisor:
   name: Prof. Tengfei Luo
-  url: ""          # optional: lab or advisor page
+  url: "https://monsterlab.nd.edu/"   # lab page
 photo: /assets/img/headshot.jpg
 email: bma@nd.edu
 cv_pdf: /assets/cv/CV_Ben-Chi_Ma.pdf

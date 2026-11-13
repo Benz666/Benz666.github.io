@@ -25,7 +25,10 @@ collections:
 
 defaults:
   - scope: { path: "", type: projects }
-    values: { layout: project }
+    values: { layout: aurora-project }
+
+# Home of the Aurora design. The demo lives at /demo/aurora/; set to "/" when it becomes the home page.
+aurora_home: /demo/aurora/
 
 exclude:
   - README.md

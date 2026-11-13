@@ -1,0 +1,87 @@
+---
+layout: aurora
+---
+{%- comment -%}
+  Project page in the article style of the reference site: vertical rule, centered serif title,
+  ruled meta strip, a chalk panel with the body, previous/next links, a back button and the contact grid.
+  Front matter fields: title, period, status, sponsor, image, image_alt, image_caption, question,
+  methods, contributions, findings, code; the page body is shown as notes.
+{%- endcomment -%}
+{%- assign pid = page.path | split: "/" | last | remove: ".md" -%}
+{%- assign home = site.aurora_home | default: "/" | relative_url -%}
+{%- assign all = site.projects | sort: "order" -%}
+{%- for x in all %}{% if x.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor -%}
+{%- assign prev_i = idx | minus: 1 -%}{%- assign next_i = idx | plus: 1 -%}
+
+<div class="a-post-zone">
+  <div class="a-rule a-rule-top" aria-hidden="true"></div>
+  <header class="a-wrap a-post-head">
+    <p class="a-crumb"><a href="{{ home }}#projects">Research projects</a></p>
+    <h1>{{ page.title }}</h1>
+    <ul class="a-meta-strip">
+      <li><span>Period:</span> <b>{{ page.period }}</b></li>
+      <li><span>Status:</span> <b>{{ page.status }}</b></li>
+      {%- if page.sponsor %}<li><span>Sponsor:</span> <b>{{ page.sponsor }}</b></li>{% endif %}
+    </ul>
+  </header>
+
+  <article class="a-post-panel">
+    {%- if page.image %}
+    <figure class="a-post-figure">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}">
+      {%- if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+
+    <p class="a-post-label">Research question</p>
+    <p class="a-lead">{{ page.question }}</p>
+
+    {%- if page.methods %}
+    <h2 class="a-post-h">Methods</h2>
+    <ul>{% for m in page.methods %}<li>{{ m }}</li>{% endfor %}</ul>
+    {%- endif %}
+
+    {%- if page.contributions %}
+    <h2 class="a-post-h">My contributions</h2>
+    <ul>{% for c in page.contributions %}<li>{{ c }}</li>{% endfor %}</ul>
+    {%- endif %}
+
+    {%- if page.findings %}
+    <h2 class="a-post-h">Key findings</h2>
+    <p>{{ page.findings }}</p>
+    {%- endif %}
+
+    {%- assign rel = site.data.publications.papers | where: "project", pid -%}
+    {%- if rel.size > 0 %}
+    <h2 class="a-post-h">Related publications</h2>
+    <ul class="a-post-pubs">{% for r in rel %}<li><a href="https://doi.org/{{ r.doi }}" target="_blank" rel="noopener">{{ r.title }}</a><br><span class="a-strong">{{ r.journal }}</span>, {{ r.year }}</li>{% endfor %}</ul>
+    {%- endif %}
+
+    {%- assign tk = site.data.talks | where: "project", pid -%}
+    {%- if tk.size > 0 %}
+    <h2 class="a-post-h">Related talks</h2>
+    <ul>{% for t in tk %}<li>{{ t.title }}. {{ t.event }}, {{ t.date }}.</li>{% endfor %}</ul>
+    {%- endif %}
+
+    {%- if page.code %}
+    <h2 class="a-post-h">Code</h2>
+    <p><a href="{{ page.code }}" target="_blank" rel="noopener">{{ page.code }}</a></p>
+    {%- endif %}
+
+    {%- assign notes = content | strip -%}
+    {%- if notes != "" %}<div class="a-post-notes">{{ content }}</div>{% endif %}
+
+    <nav class="a-post-nav" aria-label="More projects">
+      {%- if idx > 0 %}{% assign pv = all[prev_i] %}
+      <a class="a-post-prev" href="{{ pv.url | relative_url }}"><span class="a-post-dir">{% include aurora/arrow.html dir="left" %} Previous project</span><span class="a-post-name">{{ pv.title }}</span></a>
+      {%- else %}<span></span>{% endif %}
+      {%- if next_i < all.size %}{% assign nx = all[next_i] %}
+      <a class="a-post-next" href="{{ nx.url | relative_url }}"><span class="a-post-dir">Next project {% include aurora/arrow.html dir="right" %}</span><span class="a-post-name">{{ nx.title }}</span></a>
+      {%- endif %}
+    </nav>
+  </article>
+
+  <p class="a-back"><a class="button button-primary" href="{{ home }}#projects">Back to research {% include aurora/arrow.html dir="out" %}</a></p>
+</div>
+
+{% include aurora/contact.html %}

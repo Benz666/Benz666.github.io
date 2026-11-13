@@ -1,23 +1,23 @@
 ---
 layout: aurora
 permalink: /demo/aurora/
-demo: true
 graph: true
-# Hero statement: one line about your field, at most ~60 characters so it stays on two lines.
-statement: Phonon heat transport, from atoms to devices
+# Hero statement: who you are, in at most ~55 characters so it stays on two lines at desktop width.
+statement: AI-for-science researcher in semiconductor heat transport
 ---
 {%- comment -%}
   Design demo ("Aurora Mist Editorial", after yoshuabengio.org; reference notes in _design/).
   Same data as the home page; only the presentation differs. Not linked from the main site.
+  When it replaces the home page: set aurora_home: "/" in _config.yml and move this front matter to index.html.
 {%- endcomment -%}
 {% include aurora/hero.html %}
+{% include aurora/education.html %}
 {% include aurora/news.html %}
 {% include sections/interests.html %}
 {% include sections/projects.html %}
-{% include sections/publications.html %}
+{% include aurora/publications.html %}
 {% include sections/talks.html %}
 {% include sections/teaching.html %}
-{% include sections/education.html %}
 {% include sections/internships.html %}
 {% include sections/graph.html %}
 {% include sections/cv.html %}

@@ -1,12 +1,28 @@
-/* Design demo enhancements: compact header after scrolling, news slider arrows. */
+/* Aurora design enhancements: glass header after scrolling, mobile menu, news slider arrows. */
 (function () {
   "use strict";
 
   var header = document.getElementById("a-header");
+  var menuBtn = document.getElementById("a-menu-btn");
+  function setMenu(open) {
+    if (!header || !menuBtn) return;
+    header.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
   if (header) {
-    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 40); };
+    var onScroll = function () {
+      var s = window.scrollY > 40;
+      header.classList.toggle("is-scrolled", s);
+      if (!s) setMenu(false);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+  }
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () { setMenu(!header.classList.contains("menu-open")); });
+    header.querySelectorAll(".a-menu-panel a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+    document.addEventListener("click", function (e) { if (!header.contains(e.target)) setMenu(false); });
   }
 
   var slider = document.getElementById("a-slider");

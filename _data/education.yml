@@ -1,5 +1,6 @@
 # Newest first. `details` lines are shown as a short list under each entry.
 - institution: University of Notre Dame
+  url: https://www.nd.edu/
   degree: Ph.D. in Mechanical Engineering
   field: Department of Aerospace and Mechanical Engineering
   dates: Aug. 2024 – May 2029 (expected)
@@ -9,6 +10,7 @@
     - "Research: AI-accelerated multiscale materials modeling and phonon thermal transport in semiconductors and at interfaces"
 
 - institution: Xi'an Jiaotong University
+  url: https://en.xjtu.edu.cn/
   degree: M.Eng. (research degree, thesis) in Power Engineering and Engineering Thermophysics
   field: School of Energy and Power Engineering
   dates: Sept. 2021 – Jun. 2024
@@ -19,6 +21,7 @@
     - "Supervisor: Prof. Dengwei Jing"
 
 - institution: Xi'an Jiaotong University
+  url: https://en.xjtu.edu.cn/
   degree: B.Eng. in Mechanical Engineering
   field: Major in New Energy Science and Engineering, School of Energy and Power Engineering
   dates: Sept. 2017 – Jul. 2021

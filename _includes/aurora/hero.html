@@ -2,11 +2,14 @@
 <div class="a-hero-zone" id="top">
   <section class="a-wrap a-hero" aria-labelledby="hero-h">
     <div class="a-portrait">
-      <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="480" height="480">
+      <img src="{{ '/assets/img/headshot-600.jpg' | relative_url }}"
+           srcset="{{ '/assets/img/headshot-600.jpg' | relative_url }} 600w, {{ '/assets/img/headshot-1200.jpg' | relative_url }} 1200w"
+           sizes="(max-width: 549px) 260px, (max-width: 1199px) 440px, 480px"
+           alt="Portrait of {{ p.name }}" width="600" height="600" fetchpriority="high">
     </div>
     <div class="a-statement">
       <h1 id="hero-h">{{ page.statement }}</h1>
-      <p class="a-kicker">{{ p.position }} · {{ p.affiliation }}</p>
+      <p class="a-kicker">{{ p.name }} · {{ p.position }} · {{ p.affiliation }}</p>
     </div>
   </section>
 </div>

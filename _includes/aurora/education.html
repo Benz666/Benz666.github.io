@@ -1,0 +1,17 @@
+{%- comment -%} Compact education: one ruled column per degree, newest first. {%- endcomment -%}
+<section class="docs-section a-edu" id="education" aria-labelledby="education-h">
+  <h2 id="education-h">Education</h2>
+  <ol class="a-edu-grid">
+    {%- for e in site.data.education %}
+    <li class="a-edu-cell">
+      <p class="a-edu-date">{{ e.dates }}</p>
+      <h3>{{ e.degree }}</h3>
+      <p class="a-edu-inst">{% if e.url %}<a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.institution }}</a>{% else %}{{ e.institution }}{% endif %}</p>
+      <p class="a-edu-meta">{{ e.field }}{% if e.gpa %}<br><span class="a-strong">{{ e.gpa }}</span>{% endif %}</p>
+      {%- if e.details.size > 0 %}
+      <ul class="a-edu-details">{% for d in e.details %}<li>{{ d }}</li>{% endfor %}</ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
