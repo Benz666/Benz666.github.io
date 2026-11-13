@@ -394,13 +394,21 @@ body.aurora {
 /* ---------- CV ---------- */
 .aurora #cv > p { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .aurora .timeline { position: relative; border-left: 0; margin-top: 40px; }
-/* a line of light running from the main color into the accent and fading out */
-.aurora .timeline::before {
-  content: ""; position: absolute; left: 0; top: 4px; bottom: 0; width: 2px; border-radius: 2px;
-  background: linear-gradient(180deg, var(--rule) 0%, var(--grad-b) 70%, transparent 100%);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--rule) 45%, transparent);
+.aurora .timeline li { padding: 0 0 40px 2rem; font-size: 16px; }
+/* Between stars: a broken, needle-like trail, hair-thin where it leaves a star and widening
+   toward the next one, as if each star had shot the next one down the line. */
+.aurora .timeline li:not(:last-child) .time::before {
+  content: ""; position: absolute; left: -1.5px; top: 31px; bottom: 6px; width: 5px; pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--rule) 55%, transparent) 30%, var(--rule) 70%, var(--grad-b) 100%);
+  clip-path: polygon(47% 0, 53% 0, 100% 90%, 50% 100%, 0 90%);
 }
-.aurora .timeline li { padding: 0 0 32px 2rem; font-size: 16px; }
+/* faint glow along the trail */
+.aurora .timeline li:not(:last-child) .time::after {
+  content: ""; position: absolute; left: -6px; top: 46px; bottom: 4px; width: 14px; pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 75%, color-mix(in srgb, var(--grad-b) 30%, transparent), transparent 100%);
+  filter: blur(3px);
+}
+.aurora .timeline li:first-child:not(:last-child) .time::before { top: 36px; }
 /* four-point star node (sparkle) */
 .aurora .timeline li::before {
   content: ""; position: absolute; left: -13px; top: -2px; width: 28px; height: 28px; border: 0; border-radius: 0; z-index: 1;
