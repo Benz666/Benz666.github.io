@@ -10,6 +10,11 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ p.name }}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_newlines | escape }}">
   <meta name="author" content="{{ p.name }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.title | default: p.name }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | escape }}">
+  <meta property="og:image" content="{{ '/assets/img/headshot-1200.jpg' | absolute_url }}">
+  <meta property="og:type" content="website">
   {%- if site.aurora_home != "/" %}
   <!-- Design demo: keep it out of search results until it replaces the main page. -->
   <meta name="robots" content="noindex, nofollow">
@@ -24,12 +29,13 @@
         var t = localStorage.getItem("theme");
         if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
-      // Palette: ?palette=<name> wins, then the saved choice, then the site default.
-      var pal = "{{ site.aurora_palette | default: 'aurora' }}";
+      // Palette: ?palette=<name> previews another palette; otherwise the site default.
+      // In demo mode (aurora_home is not "/") the picker's choice is also remembered.
+      var pal = "{{ site.aurora_palette | default: 'aurora' }}", demo = {% if site.aurora_home != "/" %}true{% else %}false{% endif %};
       try {
         var q = new URLSearchParams(location.search).get("palette");
-        var saved = localStorage.getItem("aurora-palette");
-        if (q) { pal = q; localStorage.setItem("aurora-palette", q); } else if (saved) { pal = saved; }
+        var saved = demo ? localStorage.getItem("aurora-palette") : null;
+        if (q) { pal = q; if (demo) localStorage.setItem("aurora-palette", q); } else if (saved) { pal = saved; }
       } catch (e) {}
       document.documentElement.setAttribute("data-palette", pal);
     })();

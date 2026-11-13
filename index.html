@@ -1,20 +1,23 @@
 ---
-layout: default
+layout: aurora
 graph: true
+# Hero statement: who you are, in at most ~55 characters per two lines at desktop width.
+statement: AI-for-science researcher in semiconductor energy transport
 ---
 {%- comment -%}
-  Home page. Each section is a separate include in _includes/sections/ and reads
-  its content from _data/ (or _includes/bio.md, _projects/). Reorder sections here.
+  Home page, "Aurora" design (after yoshuabengio.org; notes and palettes in _design/README.md).
+  Each section reads its content from _data/, _includes/bio.md or _projects/. Reorder sections here.
+  The previous design (v1) is preserved at the git tag/branch design-v1.
 {%- endcomment -%}
-{% include sections/bio.html %}
-{% include sections/education.html %}
+{% include aurora/hero.html %}
+{% include aurora/education.html %}
+{% include aurora/news.html %}
 {% include sections/interests.html %}
 {% include sections/projects.html %}
-{% include sections/publications.html %}
+{% include aurora/publications.html %}
+{% include sections/talks.html %}
 {% include sections/teaching.html %}
 {% include sections/internships.html %}
 {% include sections/graph.html %}
-{% include sections/news.html %}
-{% include sections/talks.html %}
 {% include sections/cv.html %}
-{% include sections/contact.html %}
+{% include aurora/contact.html %}

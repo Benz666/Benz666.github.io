@@ -1,5 +1,7 @@
 # Ben-Chi Ma — academic website
 
+> Design: "Aurora" (since 2026-11-13). The previous design is preserved as the git tag and branch `design-v1`.
+
 Source for <https://benz666.github.io/>: a single-page academic site built with
 [Jekyll](https://jekyllrb.com/) (no theme gem) and deployed by GitHub Actions to GitHub Pages.
 The only external runtime dependencies are Google Fonts and D3 v7 (cdnjs) for the skills graph;
@@ -13,12 +15,14 @@ the page stays fully readable without them.
 | `_includes/bio.md` | Bio text (Markdown). |
 | `_projects/*.md` | One file per research project: front matter = card + detail page, body = extra notes. |
 | `_data/graph/nodes.json`, `edges.json` | Research & Skills Graph data. |
-| `_includes/sections/*.html` | One template per home-page section. |
+| `_includes/sections/*.html` | Shared section templates (interests, projects, talks, teaching, internships, graph, CV). |
+| `_includes/aurora/*.html` | Aurora-design sections and parts: hero, education, news slider, publications, contact, icons. |
 | `_includes/*.html` | Small components (icons, author list, BibTeX entry, dates, news item). |
-| `_layouts/` | `default.html` (page frame), `project.html` (project detail page). |
+| `_layouts/` | `aurora.html` (page frame), `aurora-project.html` (project detail page). `default.html` and `project.html` belong to the previous design (v1) and are no longer used. |
 | `index.html` | Section order of the home page. |
-| `assets/css/site.css` | All styles; colors are CSS variables at the top (light and dark). |
-| `assets/js/site.js` | Theme toggle, publication filters, BibTeX copy, active nav item. |
+| `assets/css/site.css`, `assets/css/aurora.css` | Base styles, then the Aurora design on top. Colors come from the palette in `aurora.css`; choose it with `aurora_palette` in `_config.yml` (see `_design/README.md`). |
+| `assets/fonts/` | Self-hosted display font (Instrument Serif, OFL). |
+| `assets/js/site.js`, `assets/js/aurora.js` | Theme toggle, publication filters, BibTeX copy, active nav item; glass header, mobile menu, news slider. |
 | `assets/js/graph.js` | Graph rendering only (reads `/assets/data/graph.json`). |
 | `assets/img/`, `assets/cv/` | Photo, favicon, public CV PDF. |
 | `publications.bib`, `assets/data/graph.json` | Generated from `_data/`; do not edit by hand. |

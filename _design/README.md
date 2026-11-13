@@ -2,7 +2,7 @@
 
 Design reference: `researcher-yoshua-bengio.md` (looketal.com style notes for yoshuabengio.org).
 Implementation: `_layouts/aurora.html`, `_layouts/aurora-project.html`, `_includes/aurora/`,
-`assets/css/aurora.css`, `assets/js/aurora.js`. Demo page: `/demo/aurora/`.
+`assets/css/aurora.css`, `assets/js/aurora.js`. Live as the home page since 2026-11-13; the previous design is the git tag/branch `design-v1`.
 
 ## Palettes (switch any time)
 

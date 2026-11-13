@@ -27,8 +27,9 @@ defaults:
   - scope: { path: "", type: projects }
     values: { layout: aurora-project }
 
-# Home of the Aurora design. The demo lives at /demo/aurora/; set to "/" when it becomes the home page.
-aurora_home: /demo/aurora/
+# Home page of the Aurora design (it was a demo at /demo/aurora/ until 2026-11-13).
+# Any other value marks pages noindex and shows the palette picker (demo mode).
+aurora_home: /
 # Color palette of the Aurora design (defined in assets/css/aurora.css, notes in _design/README.md).
 # Options: gold (royal blue #2B6EFF + champagne gold, current choice), blush (blue + blush pink),
 # violet (blue + lavender), lime (blue + tender lime), aurora (original teal + lime).
