@@ -24,6 +24,14 @@
         var t = localStorage.getItem("theme");
         if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
+      // Palette: ?palette=<name> wins, then the saved choice, then the site default.
+      var pal = "{{ site.aurora_palette | default: 'aurora' }}";
+      try {
+        var q = new URLSearchParams(location.search).get("palette");
+        var saved = localStorage.getItem("aurora-palette");
+        if (q) { pal = q; localStorage.setItem("aurora-palette", q); } else if (saved) { pal = saved; }
+      } catch (e) {}
+      document.documentElement.setAttribute("data-palette", pal);
     })();
   </script>
 
@@ -67,6 +75,17 @@
   <main id="main">
     {{ content }}
   </main>
+
+  {%- if site.aurora_home != "/" %}
+  <div class="a-palette" role="group" aria-label="Try a color palette (demo only)">
+    <span>Palette</span>
+    <button type="button" data-pal="aurora" title="Aurora: teal + lime (original)" aria-label="Aurora: teal and lime" style="--sw-a:#3eb9c6;--sw-b:#cbe18b"></button>
+    <button type="button" data-pal="gold" title="Royal blue + champagne gold" aria-label="Royal blue and champagne gold" style="--sw-a:#2b6eff;--sw-b:#e8c77a"></button>
+    <button type="button" data-pal="blush" title="Royal blue + blush pink" aria-label="Royal blue and blush pink" style="--sw-a:#2b6eff;--sw-b:#f5b3c6"></button>
+    <button type="button" data-pal="violet" title="Royal blue + lavender" aria-label="Royal blue and lavender" style="--sw-a:#2b6eff;--sw-b:#b7a1ff"></button>
+    <button type="button" data-pal="lime" title="Royal blue + tender lime" aria-label="Royal blue and tender lime" style="--sw-a:#2b6eff;--sw-b:#d0ec7c"></button>
+  </div>
+  {%- endif %}
 
   <footer class="a-footer">
     <div class="a-wrap a-footer-inner">

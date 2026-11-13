@@ -25,6 +25,22 @@
     document.addEventListener("click", function (e) { if (!header.contains(e.target)) setMenu(false); });
   }
 
+  /* palette picker (demo only) */
+  var picker = document.querySelector(".a-palette");
+  if (picker) {
+    var root = document.documentElement;
+    var mark = function () {
+      picker.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.pal === root.getAttribute("data-palette") ? "true" : "false"); });
+    };
+    picker.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-pal]"); if (!b) return;
+      root.setAttribute("data-palette", b.dataset.pal);
+      try { localStorage.setItem("aurora-palette", b.dataset.pal); } catch (err) {}
+      mark();
+    });
+    mark();
+  }
+
   var slider = document.getElementById("a-slider");
   var arrows = document.querySelector(".a-slider-arrows");
   if (slider && arrows) {

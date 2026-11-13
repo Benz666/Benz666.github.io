@@ -23,44 +23,75 @@
   unicode-range: U+002D, U+2010-2011;
 }
 
+/* ==========================================================================
+   Palettes. Each palette sets a few inputs for light (--pl-*) and dark (--pd-*);
+   every other color is derived from them below. Pick one with
+   <html data-palette="...">: aurora (original teal + lime), gold, blush, violet, lime.
+   ========================================================================== */
+:root, :root[data-palette="aurora"] {
+  --pl-bg: #e6e6e2; --pl-ink: #0b404d; --pl-main: #2393a7; --pl-link: #2393a7; --pl-glow: #3eb9c6; --pl-accent: #cbe18b; --pl-hover: #3eb9c6;
+  --pd-bg: #0b1c21; --pd-surface: #10292f; --pd-soft: #16343b; --pd-ink: #cfeee8; --pd-main: #3eb9c6; --pd-link: #6fd3df; --pd-glow: #3eb9c6; --pd-accent: #a6c95c;
+}
+/* Royal blue + champagne gold: classic, formal luxury. Dark: midnight navy with antique gold headings. */
+:root[data-palette="gold"] {
+  --pl-bg: #ecebe6; --pl-ink: #0d1b45; --pl-main: #2b6eff; --pl-link: #1f55d6; --pl-glow: #2b6eff; --pl-accent: #e8c77a; --pl-hover: #8fb0ff;
+  --pd-bg: #090e1d; --pd-surface: #10172e; --pd-soft: #17203d; --pd-ink: #f0dfb4; --pd-main: #6e95ff; --pd-link: #93b2ff; --pd-glow: #3d6bff; --pd-accent: #c9a45c;
+}
+/* Royal blue + blush pink: soft, iridescent, contemporary. */
+:root[data-palette="blush"] {
+  --pl-bg: #edeae9; --pl-ink: #111a4a; --pl-main: #2b6eff; --pl-link: #1f55d6; --pl-glow: #2b6eff; --pl-accent: #f5b3c6; --pl-hover: #9db8ff;
+  --pd-bg: #0d0d1b; --pd-surface: #161528; --pd-soft: #1f1d36; --pd-ink: #f5d6e0; --pd-main: #7398ff; --pd-link: #a1bbff; --pd-glow: #3d6bff; --pd-accent: #d9809f;
+}
+/* Royal blue + lavender violet: analogous, calm, tech-luxury. */
+:root[data-palette="violet"] {
+  --pl-bg: #e9e9ed; --pl-ink: #15164a; --pl-main: #2b6eff; --pl-link: #1f55d6; --pl-glow: #2b6eff; --pl-accent: #b7a1ff; --pl-hover: #9db2ff;
+  --pd-bg: #0b0a1c; --pd-surface: #14132d; --pd-soft: #1c1a3b; --pd-ink: #dcd2ff; --pd-main: #7c8dff; --pd-link: #a8b5ff; --pd-glow: #3d6bff; --pd-accent: #8a68ff;
+}
+/* Royal blue + tender lime: fresh, closest to the reference's energy. */
+:root[data-palette="lime"] {
+  --pl-bg: #e7e8e3; --pl-ink: #0e1f4d; --pl-main: #2b6eff; --pl-link: #1f55d6; --pl-glow: #2b6eff; --pl-accent: #d0ec7c; --pl-hover: #8fb0ff;
+  --pd-bg: #091220; --pd-surface: #101c30; --pd-soft: #17263d; --pd-ink: #e2f3b4; --pd-main: #6e95ff; --pd-link: #93b2ff; --pd-glow: #3d6bff; --pd-accent: #a6cc4c;
+}
+
+/* ---------- light tokens ---------- */
 :root {
-  --bg: #e6e6e2;            /* Fog Linen */
-  --surface: #ffffff;       /* cards */
-  --surface-soft: #f2f2f0;  /* Chalk: square buttons, panels, graph canvas */
+  --bg: var(--pl-bg);
+  --surface: #ffffff;
+  --surface-soft: color-mix(in srgb, var(--pl-bg) 40%, #fff);
   --text: #000000;
-  --text-muted: #3e4a4c;
-  --heading: #0b404d;       /* Abyss Teal */
-  --rule: #2393a7;          /* Lagoon Link: every hairline */
-  --link: #2393a7;
-  --border: rgba(35, 147, 167, 0.35);
-  --border-strong: #2393a7;
-  --accent: #2393a7;
-  --accent-text: #0b404d;
-  --grad-a: #3eb9c6;        /* Glacier Cyan */
-  --grad-b: #cbe18b;        /* Spring Lime */
-  --haze-cyan: rgba(62, 185, 198, 0.62);
-  --haze-aqua: rgba(150, 222, 214, 0.70);
-  --haze-lime: rgba(203, 225, 139, 0.70);
-  --card-glow-a: rgba(62, 185, 198, 0.80);
-  --card-glow-b: rgba(140, 222, 196, 0.85);
-  --card-glow-c: rgba(203, 225, 139, 0.65);
-  --btn-dark: #0b404d;
-  --btn-dark-text: #f2f2f0;
-  /* liquid glass */
+  --text-muted: color-mix(in srgb, var(--pl-ink) 70%, #777);
+  --heading: var(--pl-ink);
+  --rule: var(--pl-main);
+  --link: var(--pl-link);
+  --border: color-mix(in srgb, var(--pl-main) 35%, transparent);
+  --border-strong: var(--pl-main);
+  --accent: var(--pl-main);
+  --accent-text: var(--pl-ink);
+  --grad-a: var(--pl-hover);
+  --grad-b: var(--pl-accent);
+  --on-grad: var(--pl-ink);
+  --haze-cyan: color-mix(in srgb, var(--pl-glow) 50%, transparent);
+  --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pl-glow) 45%, var(--pl-accent)) 55%, transparent);
+  --haze-lime: color-mix(in srgb, var(--pl-accent) 75%, transparent);
+  --card-glow-a: color-mix(in srgb, var(--pl-glow) 55%, transparent);
+  --card-glow-b: color-mix(in srgb, color-mix(in srgb, var(--pl-glow) 40%, var(--pl-accent)) 70%, transparent);
+  --card-glow-c: color-mix(in srgb, var(--pl-accent) 75%, transparent);
+  --btn-dark: var(--pl-ink);
+  --btn-dark-text: #f4f4f1;
   --glass-top: rgba(255, 255, 255, 0.58);
   --glass-bottom: rgba(255, 255, 255, 0.26);
   --glass-edge: rgba(255, 255, 255, 0.75);
   --glass-inner: rgba(255, 255, 255, 0.95);
-  --glass-shadow: rgba(11, 64, 77, 0.22);
+  --glass-shadow: color-mix(in srgb, var(--pl-ink) 22%, transparent);
   --glass-chip: rgba(255, 255, 255, 0.38);
-  --menu-bg: rgba(240, 240, 236, 0.66);
+  --menu-bg: color-mix(in srgb, var(--pl-bg) 66%, transparent);
   --shadow: none;
 
-  --g-domain: #0b404d;
-  --g-method: #2393a7;
+  --g-domain: var(--pl-ink);
+  --g-method: var(--pl-main);
   --g-tool: #6c8c25;
   --g-project: #b0573a;
-  --t-talk: #2393a7; --t-poster: #3c8a6e; --t-award: #b0573a; --t-career: #0b404d; --t-publication: #6c8c25;
+  --t-talk: var(--pl-main); --t-poster: #3c8a6e; --t-award: #b0573a; --t-career: var(--pl-ink); --t-publication: #6c8c25;
 
   --font-body: "Funnel Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-head: "Aurora Display", "Instrument Serif", "Times New Roman", serif;
@@ -69,33 +100,47 @@
   color-scheme: light;
 }
 
-/* Dark variant (the reference is light only): deep teal night with the same haze, dimmed. */
+/* ---------- dark tokens (each palette has its own night version) ---------- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0b1c21; --surface: #10292f; --surface-soft: #16343b;
-    --text: #e6e6e2; --text-muted: #a9bcbd; --heading: #cfeee8; --rule: #3eb9c6; --link: #6fd3df;
-    --border: rgba(62, 185, 198, 0.30); --border-strong: #3eb9c6; --accent: #3eb9c6; --accent-text: #cfeee8;
-    --haze-cyan: rgba(62, 185, 198, 0.30); --haze-aqua: rgba(80, 170, 160, 0.26); --haze-lime: rgba(160, 200, 90, 0.22);
-    --card-glow-a: rgba(62, 185, 198, 0.42); --card-glow-b: rgba(80, 190, 160, 0.38); --card-glow-c: rgba(170, 205, 100, 0.30);
-    --btn-dark: #cfeee8; --btn-dark-text: #0b1c21;
-    --glass-top: rgba(40, 78, 88, 0.55); --glass-bottom: rgba(16, 41, 47, 0.35); --glass-edge: rgba(255, 255, 255, 0.16);
-    --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5); --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: rgba(14, 34, 40, 0.66);
-    --g-domain: #cfeee8; --g-method: #6fd3df; --g-tool: #b5d36a; --g-project: #ec9a7b;
-    --t-talk: #6fd3df; --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: #cfeee8; --t-publication: #b5d36a;
+    --bg: var(--pd-bg); --surface: var(--pd-surface); --surface-soft: var(--pd-soft);
+    --text: #e8e8e4; --text-muted: color-mix(in srgb, var(--pd-ink) 55%, #8a8f99);
+    --heading: var(--pd-ink); --rule: var(--pd-main); --link: var(--pd-link);
+    --border: color-mix(in srgb, var(--pd-main) 30%, transparent); --border-strong: var(--pd-main); --accent: var(--pd-main); --accent-text: var(--pd-ink);
+    --grad-a: var(--pd-main); --grad-b: var(--pd-accent); --on-grad: var(--pd-bg);
+    --haze-cyan: color-mix(in srgb, var(--pd-glow) 34%, transparent);
+    --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 26%, transparent);
+    --haze-lime: color-mix(in srgb, var(--pd-accent) 26%, transparent);
+    --card-glow-a: color-mix(in srgb, var(--pd-glow) 45%, transparent);
+    --card-glow-b: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 38%, transparent);
+    --card-glow-c: color-mix(in srgb, var(--pd-accent) 34%, transparent);
+    --btn-dark: var(--pd-ink); --btn-dark-text: var(--pd-bg);
+    --glass-top: color-mix(in srgb, var(--pd-soft) 70%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 45%, transparent);
+    --glass-edge: rgba(255, 255, 255, 0.16); --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5);
+    --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 70%, transparent);
+    --g-domain: var(--pd-ink); --g-method: var(--pd-link); --g-tool: #b5d36a; --g-project: #ec9a7b;
+    --t-talk: var(--pd-link); --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: var(--pd-ink); --t-publication: #b5d36a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0b1c21; --surface: #10292f; --surface-soft: #16343b;
-  --text: #e6e6e2; --text-muted: #a9bcbd; --heading: #cfeee8; --rule: #3eb9c6; --link: #6fd3df;
-  --border: rgba(62, 185, 198, 0.30); --border-strong: #3eb9c6; --accent: #3eb9c6; --accent-text: #cfeee8;
-  --haze-cyan: rgba(62, 185, 198, 0.30); --haze-aqua: rgba(80, 170, 160, 0.26); --haze-lime: rgba(160, 200, 90, 0.22);
-  --card-glow-a: rgba(62, 185, 198, 0.42); --card-glow-b: rgba(80, 190, 160, 0.38); --card-glow-c: rgba(170, 205, 100, 0.30);
-  --btn-dark: #cfeee8; --btn-dark-text: #0b1c21;
-  --glass-top: rgba(40, 78, 88, 0.55); --glass-bottom: rgba(16, 41, 47, 0.35); --glass-edge: rgba(255, 255, 255, 0.16);
-  --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5); --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: rgba(14, 34, 40, 0.66);
-  --g-domain: #cfeee8; --g-method: #6fd3df; --g-tool: #b5d36a; --g-project: #ec9a7b;
-  --t-talk: #6fd3df; --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: #cfeee8; --t-publication: #b5d36a;
+  --bg: var(--pd-bg); --surface: var(--pd-surface); --surface-soft: var(--pd-soft);
+  --text: #e8e8e4; --text-muted: color-mix(in srgb, var(--pd-ink) 55%, #8a8f99);
+  --heading: var(--pd-ink); --rule: var(--pd-main); --link: var(--pd-link);
+  --border: color-mix(in srgb, var(--pd-main) 30%, transparent); --border-strong: var(--pd-main); --accent: var(--pd-main); --accent-text: var(--pd-ink);
+  --grad-a: var(--pd-main); --grad-b: var(--pd-accent); --on-grad: var(--pd-bg);
+  --haze-cyan: color-mix(in srgb, var(--pd-glow) 34%, transparent);
+  --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 26%, transparent);
+  --haze-lime: color-mix(in srgb, var(--pd-accent) 26%, transparent);
+  --card-glow-a: color-mix(in srgb, var(--pd-glow) 45%, transparent);
+  --card-glow-b: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 38%, transparent);
+  --card-glow-c: color-mix(in srgb, var(--pd-accent) 34%, transparent);
+  --btn-dark: var(--pd-ink); --btn-dark-text: var(--pd-bg);
+  --glass-top: color-mix(in srgb, var(--pd-soft) 70%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 45%, transparent);
+  --glass-edge: rgba(255, 255, 255, 0.16); --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 70%, transparent);
+  --g-domain: var(--pd-ink); --g-method: var(--pd-link); --g-tool: #b5d36a; --g-project: #ec9a7b;
+  --t-talk: var(--pd-link); --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: var(--pd-ink); --t-publication: #b5d36a;
   color-scheme: dark;
 }
 
@@ -135,7 +180,7 @@ body.aurora {
     inset 0 -1px 1px rgba(255, 255, 255, 0.12),
     inset 0 0 18px rgba(255, 255, 255, 0.10),
     0 12px 32px -10px var(--glass-shadow),
-    0 2px 6px rgba(11, 64, 77, 0.06);
+    0 2px 6px color-mix(in srgb, var(--heading) 6%, transparent);
 }
 /* light streak across the glass */
 .a-header.is-scrolled .a-header-inner::before {
@@ -160,7 +205,7 @@ body.aurora {
   font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 8px 10px;
 }
 .aurora .a-header.is-scrolled .theme-toggle { border-radius: 18px; background: var(--glass-chip); padding: 8px 14px; }
-.aurora .theme-toggle:hover { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: #0b404d; }
+.aurora .theme-toggle:hover { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: var(--on-grad); }
 .a-menu-btn, .a-menu-panel { display: none; }
 .a-nav { margin-left: auto; }
 
@@ -213,7 +258,7 @@ body.aurora {
   font: 500 13px/1 var(--font-body); letter-spacing: 1px; text-transform: uppercase;
 }
 .aurora a.a-sq, .aurora a.button { border-bottom: 0; color: var(--text); }
-.a-sq:hover, .aurora .button:hover, .aurora .bibtex[open] summary { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: #0b404d; }
+.a-sq:hover, .aurora .button:hover, .aurora .bibtex[open] summary { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: var(--on-grad); }
 .a-sq:disabled { opacity: .35; cursor: default; background-image: none; }
 .a-arrow { width: 13px; height: 13px; flex: none; }
 .aurora .button-quiet { border: 0; }
@@ -222,7 +267,7 @@ body.aurora {
   height: auto; padding: 20px 40px; background: var(--btn-dark); color: var(--btn-dark-text); border: 0;
   font-size: 18px; font-weight: 600; letter-spacing: 1px; gap: 14px;
 }
-.aurora .button-primary:hover { color: #0b404d; filter: none; }
+.aurora .button-primary:hover { color: var(--on-grad); filter: none; }
 .aurora .badge { border: 0; border-radius: 0; padding: 0; font-size: 13px; font-weight: 700; letter-spacing: 1px; background: none; }
 
 /* ---------- clickable cards: whole block is the link; a cyan/lime glow fades in on hover, focus or tap ---------- */
@@ -274,7 +319,7 @@ body.aurora {
 .a-slide-tag { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 .a-slide-body > p:not(.a-slide-tag) { font-size: 22px; line-height: 1.55; margin: 0; }
 .a-slide-more { position: absolute; right: 40px; bottom: 42px; z-index: 1; }
-.a-slide.is-linked:hover .a-slide-more { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: #0b404d; }
+.a-slide.is-linked:hover .a-slide-more { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: var(--on-grad); }
 
 /* ---------- research interests: ruled grid ---------- */
 .aurora .interest-grid { gap: 0; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border: 1px solid var(--rule); }
@@ -313,7 +358,7 @@ body.aurora {
 .a-meta b { font-weight: 700; }
 .aurora .pub-buttons { margin: 0; gap: 10px; }
 .a-pub-arrow { margin-left: auto; }
-.aurora .pub.is-linked:hover .a-pub-arrow { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: #0b404d; }
+.aurora .pub.is-linked:hover .a-pub-arrow { background-image: linear-gradient(-90deg, var(--grad-a), var(--grad-b)); color: var(--on-grad); }
 .aurora .bibtex-box pre { border-radius: 0; border: 1px solid var(--border); background: var(--surface-soft); }
 .a-pub-foot { margin-top: 20px; }
 
@@ -401,6 +446,23 @@ body.aurora {
 .a-post-name { font-size: 14px; font-weight: 600; line-height: 1.4; }
 .aurora .a-post-nav a:hover .a-post-name { color: var(--link); }
 .a-back { text-align: center; margin: 56px 0 0; }
+
+/* ---------- palette picker (demo only) ---------- */
+.a-palette {
+  position: fixed; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 999px;
+  background: linear-gradient(180deg, var(--glass-top), var(--glass-bottom));
+  -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--glass-edge); box-shadow: inset 0 1px 0 var(--glass-inner), 0 10px 26px -10px var(--glass-shadow);
+  font: 600 11px/1 var(--font-body); letter-spacing: 1px; text-transform: uppercase; color: var(--text);
+}
+.a-palette span { padding: 0 4px 0 6px; }
+.a-palette button {
+  width: 26px; height: 26px; border-radius: 50%; padding: 0; cursor: pointer;
+  border: 2px solid transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, var(--sw-a) 0 50%, var(--sw-b) 50% 100%);
+}
+.a-palette button[aria-pressed="true"] { border-color: var(--text); }
 
 /* ---------- footer ---------- */
 .a-footer { position: relative; isolation: isolate; margin-top: 60px; padding: 220px 0 calc(40px + env(safe-area-inset-bottom, 0px)); overflow-x: clip; }
