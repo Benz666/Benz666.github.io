@@ -29,6 +29,11 @@ defaults:
 
 # Home of the Aurora design. The demo lives at /demo/aurora/; set to "/" when it becomes the home page.
 aurora_home: /demo/aurora/
+# Color palette of the Aurora design (defined in assets/css/aurora.css, notes in _design/README.md).
+# Options: gold (royal blue #2B6EFF + champagne gold, current choice), blush (blue + blush pink),
+# violet (blue + lavender), lime (blue + tender lime), aurora (original teal + lime).
+# Preview any of them without editing: add ?palette=<name> to the page URL.
+aurora_palette: gold
 
 exclude:
   - README.md

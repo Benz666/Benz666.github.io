@@ -31,11 +31,14 @@
 :root, :root[data-palette="aurora"] {
   --pl-bg: #e6e6e2; --pl-ink: #0b404d; --pl-main: #2393a7; --pl-link: #2393a7; --pl-glow: #3eb9c6; --pl-accent: #cbe18b; --pl-hover: #3eb9c6;
   --pd-bg: #0b1c21; --pd-surface: #10292f; --pd-soft: #16343b; --pd-ink: #cfeee8; --pd-main: #3eb9c6; --pd-link: #6fd3df; --pd-glow: #3eb9c6; --pd-accent: #a6c95c;
+  /* dark-mode strength of the accent side of the haze and card glow */
+  --pd-accent-glow: var(--pd-accent); --pd-accent-haze: 26%; --pd-accent-card: 34%;
 }
 /* Royal blue + champagne gold: classic, formal luxury. Dark: midnight navy with antique gold headings. */
 :root[data-palette="gold"] {
   --pl-bg: #ecebe6; --pl-ink: #0d1b45; --pl-main: #2b6eff; --pl-link: #1f55d6; --pl-glow: #2b6eff; --pl-accent: #e8c77a; --pl-hover: #8fb0ff;
   --pd-bg: #090e1d; --pd-surface: #10172e; --pd-soft: #17203d; --pd-ink: #f0dfb4; --pd-main: #6e95ff; --pd-link: #93b2ff; --pd-glow: #3d6bff; --pd-accent: #c9a45c;
+  --pd-accent-glow: #e2b65e; --pd-accent-haze: 50%; --pd-accent-card: 55%;
 }
 /* Royal blue + blush pink: soft, iridescent, contemporary. */
 :root[data-palette="blush"] {
@@ -78,13 +81,13 @@
   --card-glow-c: color-mix(in srgb, var(--pl-accent) 75%, transparent);
   --btn-dark: var(--pl-ink);
   --btn-dark-text: #f4f4f1;
-  --glass-top: rgba(255, 255, 255, 0.58);
-  --glass-bottom: rgba(255, 255, 255, 0.26);
+  --glass-top: rgba(255, 255, 255, 0.36);
+  --glass-bottom: rgba(255, 255, 255, 0.12);
   --glass-edge: rgba(255, 255, 255, 0.75);
   --glass-inner: rgba(255, 255, 255, 0.95);
   --glass-shadow: color-mix(in srgb, var(--pl-ink) 22%, transparent);
   --glass-chip: rgba(255, 255, 255, 0.38);
-  --menu-bg: color-mix(in srgb, var(--pl-bg) 66%, transparent);
+  --menu-bg: color-mix(in srgb, var(--pl-bg) 55%, transparent);
   --shadow: none;
 
   --g-domain: var(--pl-ink);
@@ -109,15 +112,15 @@
     --border: color-mix(in srgb, var(--pd-main) 30%, transparent); --border-strong: var(--pd-main); --accent: var(--pd-main); --accent-text: var(--pd-ink);
     --grad-a: var(--pd-main); --grad-b: var(--pd-accent); --on-grad: var(--pd-bg);
     --haze-cyan: color-mix(in srgb, var(--pd-glow) 34%, transparent);
-    --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 26%, transparent);
-    --haze-lime: color-mix(in srgb, var(--pd-accent) 26%, transparent);
+    --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent-glow)) 28%, transparent);
+    --haze-lime: color-mix(in srgb, var(--pd-accent-glow) var(--pd-accent-haze), transparent);
     --card-glow-a: color-mix(in srgb, var(--pd-glow) 45%, transparent);
     --card-glow-b: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 38%, transparent);
-    --card-glow-c: color-mix(in srgb, var(--pd-accent) 34%, transparent);
+    --card-glow-c: color-mix(in srgb, var(--pd-accent-glow) var(--pd-accent-card), transparent);
     --btn-dark: var(--pd-ink); --btn-dark-text: var(--pd-bg);
-    --glass-top: color-mix(in srgb, var(--pd-soft) 70%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 45%, transparent);
+    --glass-top: color-mix(in srgb, var(--pd-soft) 48%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 22%, transparent);
     --glass-edge: rgba(255, 255, 255, 0.16); --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5);
-    --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 70%, transparent);
+    --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 58%, transparent);
     --g-domain: var(--pd-ink); --g-method: var(--pd-link); --g-tool: #b5d36a; --g-project: #ec9a7b;
     --t-talk: var(--pd-link); --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: var(--pd-ink); --t-publication: #b5d36a;
     color-scheme: dark;
@@ -130,15 +133,15 @@
   --border: color-mix(in srgb, var(--pd-main) 30%, transparent); --border-strong: var(--pd-main); --accent: var(--pd-main); --accent-text: var(--pd-ink);
   --grad-a: var(--pd-main); --grad-b: var(--pd-accent); --on-grad: var(--pd-bg);
   --haze-cyan: color-mix(in srgb, var(--pd-glow) 34%, transparent);
-  --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 26%, transparent);
-  --haze-lime: color-mix(in srgb, var(--pd-accent) 26%, transparent);
+  --haze-aqua: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent-glow)) 28%, transparent);
+  --haze-lime: color-mix(in srgb, var(--pd-accent-glow) var(--pd-accent-haze), transparent);
   --card-glow-a: color-mix(in srgb, var(--pd-glow) 45%, transparent);
   --card-glow-b: color-mix(in srgb, color-mix(in srgb, var(--pd-glow) 50%, var(--pd-accent)) 38%, transparent);
-  --card-glow-c: color-mix(in srgb, var(--pd-accent) 34%, transparent);
+  --card-glow-c: color-mix(in srgb, var(--pd-accent-glow) var(--pd-accent-card), transparent);
   --btn-dark: var(--pd-ink); --btn-dark-text: var(--pd-bg);
-  --glass-top: color-mix(in srgb, var(--pd-soft) 70%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 45%, transparent);
+  --glass-top: color-mix(in srgb, var(--pd-soft) 48%, transparent); --glass-bottom: color-mix(in srgb, var(--pd-bg) 22%, transparent);
   --glass-edge: rgba(255, 255, 255, 0.16); --glass-inner: rgba(255, 255, 255, 0.22); --glass-shadow: rgba(0, 0, 0, 0.5);
-  --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 70%, transparent);
+  --glass-chip: rgba(255, 255, 255, 0.08); --menu-bg: color-mix(in srgb, var(--pd-bg) 58%, transparent);
   --g-domain: var(--pd-ink); --g-method: var(--pd-link); --g-tool: #b5d36a; --g-project: #ec9a7b;
   --t-talk: var(--pd-link); --t-poster: #7fd3b2; --t-award: #ec9a7b; --t-career: var(--pd-ink); --t-publication: #b5d36a;
   color-scheme: dark;
@@ -172,8 +175,8 @@ body.aurora {
 .a-header.is-scrolled .a-header-inner {
   height: 62px; margin-top: 12px; max-width: min(1320px, calc(100% - 40px)); padding-inline: 28px 14px; border-radius: 31px;
   background: linear-gradient(180deg, var(--glass-top), var(--glass-bottom));
-  -webkit-backdrop-filter: blur(22px) saturate(185%) brightness(1.04);
-  backdrop-filter: blur(22px) saturate(185%) brightness(1.04);
+  -webkit-backdrop-filter: blur(16px) saturate(190%) brightness(1.05);
+  backdrop-filter: blur(16px) saturate(190%) brightness(1.05);
   border-color: var(--glass-edge);
   box-shadow:
     inset 0 1px 0 var(--glass-inner),
@@ -390,9 +393,28 @@ body.aurora {
 
 /* ---------- CV ---------- */
 .aurora #cv > p { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-.aurora .timeline { border-left: 1px solid var(--rule); margin-top: 40px; }
-.aurora .timeline li { padding-bottom: 28px; font-size: 16px; }
-.aurora .timeline li::before { width: 9px; height: 9px; left: -5px; border-radius: 0; background: var(--rule); border: 0; }
+.aurora .timeline { position: relative; border-left: 0; margin-top: 40px; }
+/* a line of light running from the main color into the accent and fading out */
+.aurora .timeline::before {
+  content: ""; position: absolute; left: 0; top: 4px; bottom: 0; width: 2px; border-radius: 2px;
+  background: linear-gradient(180deg, var(--rule) 0%, var(--grad-b) 70%, transparent 100%);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--rule) 45%, transparent);
+}
+.aurora .timeline li { padding: 0 0 32px 2rem; font-size: 16px; }
+/* four-point star node (sparkle) */
+.aurora .timeline li::before {
+  content: ""; position: absolute; left: -13px; top: -2px; width: 28px; height: 28px; border: 0; border-radius: 0; z-index: 1;
+  background: linear-gradient(135deg, var(--rule) 25%, var(--grad-b) 80%);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12.9 6.3 17.7 11.1 24 12 17.7 12.9 12.9 17.7 12 24 11.1 17.7 6.3 12.9 0 12 6.3 11.1 11.1 6.3 12 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12.9 6.3 17.7 11.1 24 12 17.7 12.9 12.9 17.7 12 24 11.1 17.7 6.3 12.9 0 12 6.3 11.1 11.1 6.3 12 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+/* soft halo behind each star */
+.aurora .timeline li::after {
+  content: ""; position: absolute; left: -17px; top: -6px; width: 36px; height: 36px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--rule) 22%, transparent) 0%, color-mix(in srgb, var(--grad-b) 14%, transparent) 40%, transparent 68%);
+}
+.aurora .timeline li:first-child::before { width: 34px; height: 34px; left: -16px; top: -5px; }
+.aurora .timeline li:first-child::after { width: 44px; height: 44px; left: -21px; top: -10px; }
 .aurora .timeline .time { font-size: 16px; color: var(--text); }
 
 /* ---------- contact grid (social icons in their own cell, transparent glyphs) ---------- */
