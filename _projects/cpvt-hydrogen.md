@@ -2,7 +2,7 @@
 title: Spectral splitting for concentrated photovoltaic/thermal–hydrogen systems
 short: CPV/T–hydrogen with spectral splitting
 group: earlier
-order: 6
+order: 7
 period: 2020 – 2024
 status: Published
 question: >-

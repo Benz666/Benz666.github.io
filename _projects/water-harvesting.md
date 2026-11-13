@@ -2,7 +2,7 @@
 title: Solar-driven atmospheric water harvesting
 short: Solar atmospheric water harvesting
 group: earlier
-order: 7
+order: 8
 period: 2020 – 2021
 status: Published (reviews)
 question: >-

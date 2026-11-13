@@ -59,7 +59,7 @@
       "id": "md",
       "label": "Molecular dynamics",
       "group": "method",
-      "description": "Equilibrium MD for vibrational spectra (velocity autocorrelation) of large interface models."
+      "description": "Equilibrium MD for vibrational spectra (velocity autocorrelation) and non-equilibrium MD for thermal conductivity across grain boundaries."
     },
     {
       "id": "mlip",
@@ -113,7 +113,7 @@
       "id": "lammps",
       "label": "LAMMPS",
       "group": "tool",
-      "description": "Molecular dynamics engine, used in the GaN/Al₂O₃ interface work."
+      "description": "Molecular dynamics engine, used in the GaN/Al₂O₃ interface and SrTiO₃ grain-boundary work."
     },
     {
       "id": "ase",
@@ -276,6 +276,18 @@
         {
           "label": "Publication",
           "url": "#pub-zhou2025pinn"
+        }
+      ]
+    },
+    {
+      "id": "p-sto",
+      "label": "SrTiO₃ tilt grain boundaries",
+      "group": "project",
+      "description": "Thermal transport and site-resolved vibrational spectra across SrTiO₃ tilt grain boundaries, with UCI collaborators. Ongoing.",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/sto-tilt-grain-boundaries/"
         }
       ]
     },

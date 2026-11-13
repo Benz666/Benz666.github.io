@@ -233,11 +233,6 @@
     },
     {
       "source": "p-ingaas",
-      "target": "dpa",
-      "relation": "benchmarks"
-    },
-    {
-      "source": "p-ingaas",
       "target": "phono3py",
       "relation": "uses"
     },
@@ -335,6 +330,36 @@
       "source": "openmp",
       "target": "hpc",
       "relation": "part of"
+    },
+    {
+      "source": "p-sto",
+      "target": "md",
+      "relation": "uses"
+    },
+    {
+      "source": "p-sto",
+      "target": "mace",
+      "relation": "uses"
+    },
+    {
+      "source": "p-sto",
+      "target": "lammps",
+      "relation": "uses"
+    },
+    {
+      "source": "p-sto",
+      "target": "interfacial",
+      "relation": "studies"
+    },
+    {
+      "source": "p-sto",
+      "target": "phonon-properties",
+      "relation": "studies"
+    },
+    {
+      "source": "p-sto",
+      "target": "clusters",
+      "relation": "runs on"
     }
   ]
 }

@@ -13,6 +13,7 @@ methods:
   - Frequency–mean-free-path band binning with conductivity-conserving band aggregation, implemented in JAX-BTE
   - A solver-free rule for splitting a band budget between frequency windows and mean-free-path sub-bins
   - Benchmarks on bulk, thin-film, interface and TDTR cases against reference solutions
+  - Interface tests across five material pairs: GaN|AlN, GaN|diamond, Si|diamond, Si|Ge and GaN|4H-SiC
 contributions:
   - Designed and implemented the binning schemes and the band-budget selector, with unit tests
   - Built the benchmark suite and the analysis

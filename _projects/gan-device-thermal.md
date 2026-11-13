@@ -15,10 +15,13 @@ methods:
   - First-principles phonon properties as input to the phonon Boltzmann transport equation
   - GPU-accelerated multi-band deterministic BTE coupled with Fourier conduction
   - Finite-volume and analytical die-scale thermal models
+  - An effective-conductivity correction that carries non-Fourier near-junction heating into fast Fourier models
+  - GaN/Si interface conductance from the diffuse mismatch model, compared with TDTR measurements
   - Physics-informed neural networks for the phonon BTE (collaboration)
 contributions:
   - Built the coupled BTE–Fourier modeling workflow for device structures
-  - Analyzed junction-to-backside thermal resistance versus substrate and carrier choices
+  - Analyzed junction-to-backside thermal resistance of a GaN-on-Si power FET versus substrate thinning, die attach, carrier and substrate material
+  - Validated the die-scale model against a commercial device datasheet
   - Co-authored the PINN–BTE paper in Materials Today Physics (2025)
 findings: Results are not public.
 ---
