@@ -1,0 +1,26 @@
+{%- assign p = site.data.profile -%}
+<div class="a-hero-zone" id="top">
+  <section class="a-wrap a-hero" aria-labelledby="hero-h">
+    <div class="a-portrait">
+      <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="480" height="480">
+    </div>
+    <div class="a-statement">
+      <h1 id="hero-h">{{ page.statement }}</h1>
+      <p class="a-kicker">{{ p.position }} · {{ p.affiliation }}</p>
+    </div>
+  </section>
+</div>
+
+<div class="a-rule" aria-hidden="true"></div>
+
+<section class="a-wrap a-bio" id="bio" aria-label="Bio">
+  {%- capture bio %}{% include bio.md %}{% endcapture %}
+  {{ bio | markdownify }}
+  <ul class="a-quicklinks" aria-label="Links">
+    <li><a href="mailto:{{ p.email }}">Email</a></li>
+    <li><a href="{{ p.cv_pdf | relative_url }}">CV (PDF)</a></li>
+    {%- for l in p.links %}{% if l.url != "" %}
+    <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name }}</a></li>
+    {%- endif %}{% endfor %}
+  </ul>
+</section>

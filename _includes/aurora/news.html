@@ -1,0 +1,22 @@
+{%- assign news = site.data.news | sort: "date" | reverse -%}
+<section class="docs-section a-news" id="news" aria-labelledby="news-h">
+  <div class="a-label-row">
+    <h2 id="news-h">News</h2>
+    <div class="a-slider-arrows" hidden>
+      <button type="button" class="a-sq" data-slide="-1" aria-label="Previous news item">{% include aurora/arrow.html dir="left" %}</button>
+      <button type="button" class="a-sq" data-slide="1" aria-label="Next news item">{% include aurora/arrow.html dir="right" %}</button>
+    </div>
+  </div>
+  <ul class="a-slider" id="a-slider" tabindex="0" aria-label="News, newest first">
+    {%- for n in news %}
+    <li class="a-slide">
+      <p class="a-slide-date">{% include date.html d=n.date %}</p>
+      <div class="a-slide-body">
+        <p class="a-slide-tag">{{ n.tag | capitalize }}</p>
+        <p>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+        {%- if n.link %}<a class="a-sq a-slide-more" href="{{ n.link }}" aria-label="More about this">{% include aurora/arrow.html dir="out" %}</a>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

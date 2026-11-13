@@ -1,0 +1,24 @@
+{%- assign p = site.data.profile -%}
+<section class="docs-section a-contact" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <div class="a-contact-grid">
+    <div class="a-contact-cell">
+      <p><a class="a-strong-link" href="mailto:{{ p.email }}">Email {% include aurora/arrow.html dir="right" %}</a></p>
+      <p>{{ p.email }}</p>
+      <ul class="a-social" aria-label="Profiles">
+        {%- for l in p.links %}{% if l.url != "" %}
+        <li><a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ l.name }}" title="{{ l.name }}">{% include icon.html name=l.icon %}</a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+    </div>
+    <div class="a-contact-cell">
+      <p><span class="a-strong">Research group</span></p>
+      <p>Advisor: {{ p.advisor.name }}<br>{{ p.department }}</p>
+    </div>
+    <div class="a-contact-cell">
+      <p><span class="a-strong">{{ p.affiliation }}</span></p>
+      <p>{{ p.location }}</p>
+      <p><a class="a-strong-link" href="{{ p.cv_pdf | relative_url }}">Download CV {% include aurora/arrow.html dir="out" %}</a></p>
+    </div>
+  </div>
+</section>
