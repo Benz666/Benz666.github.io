@@ -395,17 +395,17 @@ body.aurora {
 .aurora #cv > p { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .aurora .timeline { position: relative; border-left: 0; margin-top: 40px; }
 .aurora .timeline li { padding: 0 0 40px 2rem; font-size: 16px; }
-/* Between stars: a broken, needle-like trail, hair-thin where it leaves a star and widening
-   toward the next one, as if each star had shot the next one down the line. */
+/* Between stars: a broken, needle-like trail, widest (blue) where it leaves a star and tapering
+   to a hair-thin gold point toward the next one. */
 .aurora .timeline li:not(:last-child) .time::before {
   content: ""; position: absolute; left: -1.5px; top: 31px; bottom: 6px; width: 5px; pointer-events: none;
-  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--rule) 55%, transparent) 30%, var(--rule) 70%, var(--grad-b) 100%);
-  clip-path: polygon(47% 0, 53% 0, 100% 90%, 50% 100%, 0 90%);
+  background: linear-gradient(180deg, var(--rule) 0%, var(--rule) 22%, var(--grad-b) 72%, color-mix(in srgb, var(--grad-b) 35%, transparent) 100%);
+  clip-path: polygon(50% 0, 100% 10%, 53% 100%, 47% 100%, 0 10%);
 }
 /* faint glow along the trail */
 .aurora .timeline li:not(:last-child) .time::after {
-  content: ""; position: absolute; left: -6px; top: 46px; bottom: 4px; width: 14px; pointer-events: none;
-  background: radial-gradient(50% 50% at 50% 75%, color-mix(in srgb, var(--grad-b) 30%, transparent), transparent 100%);
+  content: ""; position: absolute; left: -6px; top: 31px; bottom: 30px; width: 14px; pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 25%, color-mix(in srgb, var(--rule) 28%, transparent), transparent 100%);
   filter: blur(3px);
 }
 .aurora .timeline li:first-child:not(:last-child) .time::before { top: 36px; }
