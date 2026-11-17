@@ -22,4 +22,4 @@ code: https://github.com/Benz666/MLPhonon
 findings: Presented at ICT 2026; manuscript in preparation. Quantitative results will be shared after publication.
 ---
 
-Part of the Phonon Olympics project. Work with Zhihao Xu and Prof. Tengfei Luo. The ICT 2026 talk is listed under Talks.
+Part of the Phonon Olympics project, a multi-institution effort in which several research groups compute the thermal conductivity of InGaAs across compositions; this work is our group's contribution. Work with Zhihao Xu and Prof. Tengfei Luo. The ICT 2026 talk is listed under Talks.
