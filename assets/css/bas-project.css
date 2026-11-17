@@ -1,0 +1,53 @@
+/* BAs research case study: inherits the site's Aurora palette and type. */
+.bas-project { padding-top: 50px; }
+.bas-head, .bas-content, .bas-end { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.bas-head { text-align: center; }
+.bas-head .a-crumb { font-size: 13px; margin-bottom: 22px; }
+.aurora .bas-head h1 { font-size: 56px; line-height: 1.08; margin: 0 0 12px; }
+.bas-subtitle { color: var(--link); font-size: 20px; margin: 0 auto 22px; max-width: 760px; }
+.bas-intro { max-width: 790px; margin: 0 auto 30px; line-height: 1.7; font-size: 17px; }
+.bas-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 20px 0; margin: 0; border-block: 1px solid var(--border); text-align: left; gap: 28px; }
+.bas-facts strong, .bas-facts span { display: block; }
+.bas-facts strong { color: var(--heading); font-size: 17px; font-weight: 600; }
+.bas-facts span { font-size: 13px; line-height: 1.5; color: var(--text-muted); margin-top: 5px; }
+.bas-toc { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px; padding: 20px 0 4px; }
+.bas-toc a { font-size: 13px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.bas-section { padding-block: 44px; border-bottom: 1px solid var(--border); scroll-margin-top: 110px; }
+.bas-section-label { color: var(--link); font-size: 12px; font-weight: 600; margin: 0 0 12px; }
+.aurora .bas-section h2 { font-size: 36px; line-height: 1.15; margin: 0 0 18px; max-width: 850px; }
+.bas-section > p:not(.bas-section-label) { font-size: 17px; line-height: 1.75; max-width: 850px; margin: 0 0 24px; }
+.bas-figure { margin: 28px 0 0; }
+.bas-figure > a { display: block; background: white; border: 1px solid #dbe0ea; }
+.bas-figure a:focus-visible { outline: 3px solid var(--link); outline-offset: 5px; }
+.bas-figure img { display: block; width: 100%; height: auto; }
+.bas-figure figcaption { color: var(--text-muted); font-size: 13px; line-height: 1.75; margin-top: 15px; max-width: 960px; }
+.bas-figure figcaption strong { color: var(--heading); }
+.bas-figure-action { color: var(--link); white-space: normal; }
+.bas-methods { margin-top: 24px; max-width: 920px; border-block: 1px solid var(--border); padding: 15px 0; }
+.bas-methods summary { cursor: pointer; color: var(--heading); font-size: 15px; font-weight: 600; }
+.bas-methods ul { padding-left: 22px; font-size: 14px; line-height: 1.8; margin-bottom: 0; }
+.bas-methods li + li { margin-top: 8px; }
+.bas-contributions dl { margin: 28px 0; }
+.bas-contributions dl > div { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; padding-block: 22px; border-top: 1px solid var(--border); }
+.bas-contributions dt { font-size: 17px; color: var(--heading); font-weight: 600; }
+.bas-contributions dd { font-size: 16px; margin: 0; line-height: 1.75; max-width: 700px; }
+.bas-section .bas-outlook { margin-top: 28px; }
+.bas-end { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 34px 60px; }
+.bas-end p { color: var(--text-muted); font-size: 13px; line-height: 1.7; margin: 0; }
+.bas-end a { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .bas-project { padding-top: 28px; }
+  .bas-head, .bas-content, .bas-end { width: calc(100% - 36px); }
+  .aurora .bas-head h1 { font-size: 40px; }
+  .bas-subtitle { font-size: 18px; }
+  .bas-intro, .bas-section > p:not(.bas-section-label) { font-size: 16px; }
+  .bas-facts { grid-template-columns: 1fr; gap: 16px; }
+  .bas-facts li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; }
+  .bas-facts strong { font-size: 14px; }
+  .bas-facts span { margin: 0; }
+  .bas-toc { justify-content: flex-start; gap: 12px 20px; }
+  .bas-section { padding-block: 32px; }
+  .aurora .bas-section h2 { font-size: 29px; }
+  .bas-contributions dl > div { grid-template-columns: 1fr; gap: 10px; }
+  .bas-end { align-items: flex-start; flex-direction: column; }
+}

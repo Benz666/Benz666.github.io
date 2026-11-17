@@ -1,0 +1,31 @@
+---
+layout: aurora
+---
+<article class="bas-project">
+  <header class="bas-head">
+    <p class="a-crumb"><a href="{{ '/' | relative_url }}#projects">Research projects</a> / Boron arsenide</p>
+    <h1>{{ page.title }}</h1>
+    <p class="bas-subtitle">{{ page.subtitle }}</p>
+    <p class="bas-intro">{{ page.question }}</p>
+    <ul class="bas-facts" aria-label="Project scope">
+      <li><strong>Two scales</strong><span>Twin boundaries to intrinsic scattering</span></li>
+      <li><strong>Two ML potentials</strong><span>Deep Potential and Moment Tensor Potential</span></li>
+      <li><strong>200–1000 K</strong><span>Temperature-dependent phonon transport</span></li>
+    </ul>
+    <nav class="bas-toc" aria-label="On this page">
+      <a href="#phonons">Phonons</a>
+      <a href="#twin-boundaries">Twin boundaries</a>
+      <a href="#thermal-transport">Thermal transport</a>
+      <a href="#validation">Validation</a>
+      <a href="#contributions">My contributions</a>
+    </nav>
+  </header>
+
+  <div class="bas-content">{{ content }}</div>
+
+  <footer class="bas-end">
+    <p>Selected results from ongoing research at the University of Notre Dame.<br>Figure selection reviewed November 2026.</p>
+    <a class="button button-primary" href="{{ '/' | relative_url }}#projects">Back to research {% include aurora/arrow.html dir="out" %}</a>
+  </footer>
+</article>
+{% include aurora/contact.html %}

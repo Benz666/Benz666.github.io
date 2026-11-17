@@ -111,6 +111,23 @@ The site does not depend on the NAS. Keep backups there if you like, but GitHub 
 
 ## Possible next steps
 
+### BAs Research Showcase
+
+`_projects/bas-kappa.md` uses the scoped `aurora-bas-project` layout and
+`assets/css/bas-project.css`. Its four figure groups are maintained in
+`assets/img/bas/`: phonon band/DOS, twin-boundary NEMD and length extrapolation,
+temperature-dependent BTE conductivity, and native-DP q-mesh sensitivity.
+The project is linked automatically from the home-page project collection.
+
+The user explicitly approved public display of these four groups on
+2026-11-17. This is a scoped exception to the general restriction on unpublished
+numbers, not permission to publish other results. No EMD results, private
+repository links, raw datasets or internal computing paths belong on this page.
+Keep solver/IFC provenance in the figure captions: the inverse/hybrid curves
+are not an isolated measurement of four-phonon suppression, and the native-DP
+mesh scan is a separate branch. The inverse-conductance figure uses
+K m^2/MW, as established by the original analysis notebook.
+
 - Figures for projects once papers are out (`image`, `image_alt`, `image_caption` in the project front matter).
 - Google Scholar citation counts (manual or a scheduled workflow).
 - A "Software" section if a public repository (e.g. a JAX-BTE contribution) becomes citable.
