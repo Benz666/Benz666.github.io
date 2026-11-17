@@ -3,7 +3,7 @@ title: Phonon direction asymmetry at BaTiO₃ dislocations
 short: BaTiO₃ dislocation phonon asymmetry
 group: phd
 order: 5.5
-period: Mar. 2026 – Present
+period: Apr. 2025 – Present
 status: Ongoing
 question: >-
   Momentum-resolved vibrational EELS can see phonons travelling in opposite directions on the two sides

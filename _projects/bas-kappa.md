@@ -6,7 +6,7 @@ subtitle: AI-enhanced thermal transport, from twin boundaries to phonons
 description: Ben-Chi Ma's research connecting active-learning interatomic potentials, twin-boundary molecular dynamics, and three- and four-phonon transport in boron arsenide.
 group: phd
 order: 2.5
-period: Ongoing
+period: Feb. 2026 – Present
 status: Ongoing research
 extra_css: /assets/css/bas-project.css
 social_image: /assets/img/bas/phonon-band-dos.png

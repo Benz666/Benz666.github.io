@@ -3,7 +3,7 @@ title: Phonon band discretization for deterministic BTE solvers
 short: Band discretization for the phonon BTE
 group: phd
 order: 4
-period: 2026 – Present
+period: Sept. 2026 – Present
 status: Manuscript in preparation
 question: >-
   Deterministic phonon BTE solvers group thousands of phonon modes into a limited number of bands.

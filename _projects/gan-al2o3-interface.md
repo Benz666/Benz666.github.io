@@ -3,7 +3,7 @@ title: Phonon spectra and interfacial thermal transport at GaN/Al₂O₃ disloca
 short: GaN/Al₂O₃ dislocation phonons
 group: phd
 order: 1
-period: Ongoing
+period: May 2026 – Nov. 2026
 status: Manuscript in preparation
 question: >-
   Misfit dislocations at GaN/sapphire interfaces create local atomic structures (dislocation cores and

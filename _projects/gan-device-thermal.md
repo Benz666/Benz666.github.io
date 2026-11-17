@@ -3,7 +3,7 @@ title: Multiscale thermal modeling of GaN power and RF transistors
 short: Multiscale thermal modeling of GaN transistors
 group: phd
 order: 3
-period: Ongoing
+period: Sept. 2025 – Present
 status: Ongoing
 sponsor: Lockheed Martin
 question: >-
@@ -13,7 +13,7 @@ question: >-
   thinning, carrier) actually matter?
 methods:
   - First-principles phonon properties as input to the phonon Boltzmann transport equation
-  - AlN, GaN and AlGaN alloy phonon transport from a foundation machine-learning interatomic potential (MACE), with the virtual-crystal approximation and q-mesh extrapolation, checked against DFT references
+  - AlN, GaN and AlGaN alloy phonon transport from a foundation machine-learning interatomic potential (MACE), with the virtual-crystal approximation and q-mesh extrapolation, checked against DFT references (MLPhonon workflow)
   - GPU-accelerated multi-band deterministic BTE coupled with Fourier conduction
   - Finite-volume and analytical die-scale thermal models
   - An effective-conductivity correction that carries non-Fourier near-junction heating into fast Fourier models

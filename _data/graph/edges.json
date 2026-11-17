@@ -480,6 +480,31 @@
       "source": "mtp",
       "target": "mlip",
       "relation": "implements"
+    },
+    {
+      "source": "mlphonon",
+      "target": "lattice-dynamics",
+      "relation": "implements"
+    },
+    {
+      "source": "mlphonon",
+      "target": "mlip",
+      "relation": "uses"
+    },
+    {
+      "source": "mlphonon",
+      "target": "phono3py",
+      "relation": "uses"
+    },
+    {
+      "source": "p-ingaas",
+      "target": "mlphonon",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "mlphonon",
+      "relation": "uses"
     }
   ]
 }

@@ -176,6 +176,18 @@
       "description": "GPU deterministic phonon BTE solver written in JAX; I contributed band discretization schemes."
     },
     {
+      "id": "mlphonon",
+      "label": "MLPhonon",
+      "group": "tool",
+      "description": "My open-source workflow from machine-learned interatomic potentials to lattice dynamics and thermal transport.",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Benz666/MLPhonon"
+        }
+      ]
+    },
+    {
       "id": "python",
       "label": "Python",
       "group": "tool",
