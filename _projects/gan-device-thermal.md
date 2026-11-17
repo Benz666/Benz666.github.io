@@ -13,6 +13,7 @@ question: >-
   thinning, carrier) actually matter?
 methods:
   - First-principles phonon properties as input to the phonon Boltzmann transport equation
+  - AlN, GaN and AlGaN alloy phonon transport from a foundation machine-learning interatomic potential (MACE), with the virtual-crystal approximation and q-mesh extrapolation, checked against DFT references
   - GPU-accelerated multi-band deterministic BTE coupled with Fourier conduction
   - Finite-volume and analytical die-scale thermal models
   - An effective-conductivity correction that carries non-Fourier near-junction heating into fast Fourier models
@@ -20,6 +21,7 @@ methods:
   - Physics-informed neural networks for the phonon BTE (collaboration)
 contributions:
   - Built the coupled BTE–Fourier modeling workflow for device structures
+  - Built the MLIP-to-device material pipeline that hands AlGaN barrier-layer phonon properties to the device BTE solver
   - Analyzed junction-to-backside thermal resistance of a GaN-on-Si power FET versus substrate thinning, die attach, carrier and substrate material
   - Validated the die-scale model against a commercial device datasheet
   - Co-authored the PINN–BTE paper in Materials Today Physics (2025)

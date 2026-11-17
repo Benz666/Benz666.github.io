@@ -146,6 +146,12 @@
       "description": "Pretrained Deep Potential foundation model."
     },
     {
+      "id": "mtp",
+      "label": "MTP (MLIP)",
+      "group": "tool",
+      "description": "Moment Tensor Potentials, trained and benchmarked against Deep Potential models."
+    },
+    {
       "id": "phono3py",
       "label": "phono3py",
       "group": "tool",
@@ -156,6 +162,12 @@
       "label": "ALAMODE",
       "group": "tool",
       "description": "Force constants and phonon properties; also supplies mode tables for BTE solvers."
+    },
+    {
+      "id": "shengbte",
+      "label": "ShengBTE / FourPhonon",
+      "group": "tool",
+      "description": "Iterative three-phonon and four-phonon Boltzmann transport for lattice thermal conductivity."
     },
     {
       "id": "jaxbte",
@@ -240,6 +252,18 @@
       ]
     },
     {
+      "id": "p-bas",
+      "label": "Boron arsenide thermal transport",
+      "group": "project",
+      "description": "Active-learning DP and MTP potentials for boron arsenide: twin-boundary NEMD, phonons, and three- and four-phonon transport. Ongoing.",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/bas-kappa/"
+        }
+      ]
+    },
+    {
       "id": "p-gan-device",
       "label": "GaN transistor thermal modeling",
       "group": "project",
@@ -288,6 +312,18 @@
         {
           "label": "Project page",
           "url": "/projects/sto-tilt-grain-boundaries/"
+        }
+      ]
+    },
+    {
+      "id": "p-bto",
+      "label": "BaTiO₃ dislocation phonon asymmetry",
+      "group": "project",
+      "description": "Phonon BTE model of the EELS-observed direction asymmetry around a BaTiO₃ dislocation and inversion of the interface transmissivity, with UCI collaborators. Ongoing.",
+      "links": [
+        {
+          "label": "Project page",
+          "url": "/projects/bto-dislocation/"
         }
       ]
     },

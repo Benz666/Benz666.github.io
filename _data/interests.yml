@@ -8,7 +8,7 @@ current:
     text: Deterministic BTE solvers, phonon band discretization, and coupling the BTE with Fourier conduction for non-Fourier heating.
     graph: bte
   - title: Machine-learned interatomic potentials
-    text: Self-trained and foundation potentials (Deep Potential, MACE, DPA) and concurrent learning for phonon-accurate models.
+    text: Self-trained and foundation potentials (Deep Potential, Moment Tensor Potential, MACE, DPA) and active learning for phonon-accurate models.
     graph: mlip
   - title: Atomistic and multiscale modeling
     text: Linking first-principles calculations and molecular dynamics to device-scale thermal models of GaN electronics.

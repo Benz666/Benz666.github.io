@@ -360,6 +360,126 @@
       "source": "p-sto",
       "target": "clusters",
       "relation": "runs on"
+    },
+    {
+      "source": "p-bas",
+      "target": "mlip",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "deepmd",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "mtp",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "dft",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "vasp",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "md",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "lammps",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "lattice-dynamics",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "bte",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "shengbte",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bas",
+      "target": "interfacial",
+      "relation": "studies"
+    },
+    {
+      "source": "p-bas",
+      "target": "phonon-properties",
+      "relation": "studies"
+    },
+    {
+      "source": "p-bas",
+      "target": "clusters",
+      "relation": "runs on"
+    },
+    {
+      "source": "p-bas",
+      "target": "gpu",
+      "relation": "runs on"
+    },
+    {
+      "source": "p-bto",
+      "target": "bte",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bto",
+      "target": "jaxbte",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bto",
+      "target": "jax",
+      "relation": "uses"
+    },
+    {
+      "source": "p-bto",
+      "target": "interfacial",
+      "relation": "studies"
+    },
+    {
+      "source": "p-bto",
+      "target": "phonon-properties",
+      "relation": "studies"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "mace",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "mlip",
+      "relation": "uses"
+    },
+    {
+      "source": "p-gan-device",
+      "target": "phono3py",
+      "relation": "uses"
+    },
+    {
+      "source": "shengbte",
+      "target": "lattice-dynamics",
+      "relation": "implements"
+    },
+    {
+      "source": "mtp",
+      "target": "mlip",
+      "relation": "implements"
     }
   ]
 }
