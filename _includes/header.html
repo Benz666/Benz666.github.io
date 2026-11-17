@@ -9,7 +9,7 @@
     <p>{{ p.department }}<br>{{ p.affiliation }}, {{ p.location }}</p>
     <p class="header-contact">
       <a href="mailto:{{ p.email }}">{% include icon.html name="email" %}<span>{{ p.email }}</span></a>
-      <a href="{{ p.cv_pdf | relative_url }}">{% include icon.html name="download" %}<span>CV (PDF)</span></a>
+      <a href="{{ p.cv_pdf | relative_url }}">{% include icon.html name="download" %}<span>Resume (PDF)</span></a>
     </p>
     <ul class="header-social" aria-label="Profiles">
       {%- for l in p.links %}{% if l.url != "" %}

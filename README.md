@@ -44,7 +44,7 @@ Edit the file, run the local preview (below), then commit and push. The site reb
 | Internships | `_data/internships.yml` | |
 | News | `_data/news.yml` | `date` as `YYYY-MM-DD`, `YYYY-MM` or `YYYY`; `tag`: talk / poster / award / career / publication. Items older than last year fold into "Earlier news" automatically. Quote a `text` that starts with `**`. |
 | Talks | `_data/talks.yml` | `type`: oral / poster / invited / technical / guest-lecture. |
-| CV | `assets/cv/CV_Ben-Chi_Ma.pdf` + `cv_updated` in `profile.yml` | Use the **public** build of the CV (no phone number), see below. |
+| Resume | `assets/cv/Ben-Chi_Ma_Resume.pdf` + `cv_updated` in `profile.yml` | Use the **public** build of the industry resume (no phone number), see below. The academic CV is not published. |
 | Skills graph | `_data/graph/nodes.json`, `edges.json` | See next section. |
 
 ### Skills graph data
@@ -57,16 +57,19 @@ Edit the file, run the local preview (below), then commit and push. The site reb
 - Only add an edge when a project, paper, talk or CV entry backs it. There are deliberately no skill levels.
 - The list version under the graph is generated from the same files, so it never goes out of sync.
 
-### Public CV PDF
+### Public resume PDF
 
-The CV source lives outside this repository (`~/Documents/Areas/CV_update/CV_Ben-Chi.tex`). It has a switch that
-drops the phone number:
+The site links the 2-page industry resume, not the academic CV (the user targets industry roles). The source lives
+outside this repository (`~/Documents/Areas/CV_update/resume.tex`). It has a switch that drops the phone number:
 
 ```bash
 cd ~/Documents/Areas/CV_update
-latexmk -xelatex -jobname=CV_public -usepretex='\def\publicversion{}' CV_Ben-Chi.tex
-cp CV_public.pdf ~/Documents/Projects/Benz666.github.io/assets/cv/CV_Ben-Chi_Ma.pdf
+latexmk -xelatex -jobname=resume_public -usepretex='\def\publicversion{}' resume.tex
+cp resume_public.pdf ~/Documents/Projects/Benz666.github.io/assets/cv/Ben-Chi_Ma_Resume.pdf
 ```
+
+Never copy `resume.pdf` (private build with the phone). The user approved the resume's unpublished project
+numbers for public release on 2026-11-17.
 
 ## Local preview
 

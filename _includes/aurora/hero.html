@@ -21,7 +21,7 @@
   {{ bio | markdownify }}
   <ul class="a-quicklinks" aria-label="Links">
     <li><a href="mailto:{{ p.email }}">Email</a></li>
-    <li><a href="{{ p.cv_pdf | relative_url }}">CV (PDF)</a></li>
+    <li><a href="{{ p.cv_pdf | relative_url }}">Resume (PDF)</a></li>
     {%- for l in p.links %}{% if l.url != "" %}
     <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name }}</a></li>
     {%- endif %}{% endfor %}
